@@ -1,0 +1,164 @@
+/* === Estilos base del login === */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(120deg, #eaf0ff 0%, #f7f9ff 100%);
+  display: grid;
+  place-items: center; /* centra el formulario vertical y horizontalmente */
+  color: #1f2430;
+}
+
+/* Fondo decorativo (burbujas) */
+.background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none; /* evita que interfiera con clicks */
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  width: 40%;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: 0.35;
+}
+
+.shape:nth-child(1) {
+  top: -90px;
+  right: -90px;
+  background: radial-gradient(closest-side, #6c63ff, #b3adff);
+}
+.shape:nth-child(2) {
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(closest-side, #00c2ff, #8ee6ff);
+}
+
+/* Caja del formulario */
+form {
+  position: relative;
+  z-index: 1; /* sobre el fondo decorativo */
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 26px 22px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+  border: 1px solid #eef1f7;
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #161a25;
+}
+
+/* Campos */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #283042;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: 1px solid #d6dbe6;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: .95rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  background: #f9fbff;
+}
+
+input::placeholder { color: #98a2b3; }
+
+input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, .12);
+  background: #fff;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6c63ff, #4d46d6);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: filter .2s, transform .04s;
+}
+
+button:hover { filter: brightness(1.05); }
+button:active { transform: translateY(1px); }
+
+/* Botones sociales */
+.social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.social .go,
+.social .fb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #d6dbe6;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2b2f3a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.social .go:hover,
+.social .fb:hover {
+  background: #f4f6fa;
+  border-color: #c9cfe0;
+}
+
+/* Colores de iconos sociales (si cargas Font Awesome) */
+.social .go .fa-google { color: #DB4437; }
+.social .fb .fa-facebook { color: #1877F2; }
+
+/* Accesibilidad: foco visible en elementos clicables */
+a:focus-visible,
+button:focus-visible,
+.social .go:focus-visible,
+.social .fb:focus-visible {
+  outline: 3px solid rgba(108,99,255,.5);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 420px) {
+  form { padding: 22px 18px; }
+  .shape { width: 320px; height: 320px; }
+}

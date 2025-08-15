@@ -1,0 +1,28 @@
+.boton{
+  background-color: #A1B4FF;
+  width: 20%;
+  height: 40%;
+
+
+}
+
+
+.btn-personalizado-agregar{
+
+   background-color: #0cb397fa;
+   border: none;
+   color: white;
+   font-weight: 600;
+   border-radius: 25px;
+   padding: 10px 25px;
+   transition: background-color 0.3s ease;
+   width: 100%;
+   max-width: 300px;
+
+}
+
+.link{
+   
+  color:white;
+}
+
