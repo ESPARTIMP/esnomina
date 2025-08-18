@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php include 'Nav.php'; ?>
-  <div class="container-fluid pt-5">
+  <div class="container-fluid pt-5" style = "background:#f5f7ffff">
     <div class="row">
       <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
         <?php include 'Menu.php'; ?>

@@ -26,3 +26,29 @@
   color:white;
 }
 
+/* Cards: round only the bottom-left corner of footers */
+.card {
+  /* Ensure inner contents don't overflow past rounded corners */
+  overflow: hidden;
+}
+
+/* Left-only rounding for any card footer */
+.card > .card-footer {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: var(--bs-card-border-radius, .375rem);
+}
+
+/* If footer contains a full-width button, mirror the same rounding */
+.card > .card-footer .btn {
+  border-radius: 0; /* reset */
+  border-bottom-left-radius: var(--bs-card-border-radius, .375rem);
+}
+
+/* Optional helper if used explicitly in markup */
+.border-izquierdo {
+  border-bottom-left-radius: var(--bs-card-border-radius, .800rem) !important;
+  border-bottom-right-radius: 0 !important;
+}
+

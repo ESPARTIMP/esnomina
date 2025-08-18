@@ -78,16 +78,12 @@
             .btn-personalizado { max-width: 100%; padding: 10px 10px; }
         }
 
-        @media (max-width: 576px) {
+    @media (max-width: 576px) {
             .container { padding: 5px; }
             .fieldset-custom { padding: 5px; }
             .btn-personalizado { padding: 8px 5px; }
         }
 
-         textarea {
-           
-            border:none;
-         }
     </style>
 
     <!-- Función para vista previa de la foto -->
@@ -109,7 +105,7 @@
     <!-- Navbar -->
     <?php include 'Nav.php'; ?>
 
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5" style="background:#f5f7ffff;">
         <div class="row">
             <!-- Menú lateral -->
             <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
@@ -125,7 +121,6 @@
                         <div class="row mb-4">
                             <!-- Información personal -->
                             <div class="col-12 col-lg-7">
-                                <h1 class="h3 mb-4">Datos Personales</h1>
                                 <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Personales</h5>
@@ -203,7 +198,6 @@
 
                             <!-- Información empresarial -->
                             <div class="col-12 col-lg-5">
-                                <h1 class="h3 mb-4">Datos Empresariales</h1>
                                 <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Empresariales</h5>
@@ -256,19 +250,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-3">
-                                <h1 class="h3 mb-4">Observaciones</h1>
-                                <div class="card border-0 shadow-lg">
+                            <div class="col-12 col-lg-3  mt-4">
+                                <div class="card border-0 shadow-lg ">
                                     <div class="card-body">
+                                        <h5 class="card-title">Observaciones</h5>
                                         <div class="row">
-                                           <textarea name="observacion" id="observacion" class="observacion-control" rows="8" placeholder="Ingrese los datos del empleado aquí..."></textarea>
+                                           <textarea name="observacion" id="observacion" class="observacion-control" rows="8" placeholder="Ingrese los datos del empleado aquí..." style="border:none;"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-12 col-lg-9">
-                                <h1 class="h3 mb-4">Ingresos</h1>
-                                <div class="card border-0 shadow-lg">
+                                    <div class="col-12 col-lg-9">
+                                  <div class="card border-0 shadow-lg mt-4">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos de Ingresos</h5>
 
