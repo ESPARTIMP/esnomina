@@ -1,7 +1,7 @@
 <?php
 // GraficaNomina.php - Gráfica de línea (últimos 6 meses)
 ?>
-<div class="card mb-4">
+<div class="card mb-4 border-0 shadow-lg">
   <div class="card-body">
     <h6 class="card-title" style="font-weight: 600; color: #232946;">Gráfico Nómina (últimos 6 meses)</h6>
     <canvas id="graficaNomina" height="373" width="900"></canvas>

@@ -1,7 +1,7 @@
 <?php
 // Card con gráfica de barras usando Chart.js
 ?>
-<div class="card mb-4">
+<div class="card mb-4 border-0 shadow-lg">
     <div class="card-body">
         <h6 class="card-title">Horas Trabajadas vs Horas Extras</h6>
         <canvas id="graficaBarra" class="chart-canvas"></canvas>

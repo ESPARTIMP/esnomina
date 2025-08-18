@@ -110,6 +110,22 @@
                 padding: 10px;
             }
         }
+
+        /* Icono con degradado para subitems usando máscara (fallback si no hay soporte) */
+        .icon-gradient {
+            width: 20px;
+            height: 20px;
+            display: none; /* oculto si no hay soporte de mask */
+            margin-right: 8px;
+            background: linear-gradient(135deg, #172d49ce 0%, #121f2bc5 100%); /* degradado gris */
+            -webkit-mask: var(--icon) no-repeat center / contain;
+            mask: var(--icon) no-repeat center / contain;
+            vertical-align: middle;
+        }
+        @supports ((-webkit-mask: url("") no-repeat) or (mask: url("") no-repeat)) {
+            .icon-gradient { display: inline-block; }
+            .submenu a img { display: none; } /* ocultar PNG si mostramos degradado */
+        }
     </style>
 </head>
 <body>
@@ -122,7 +138,7 @@
             </li>
 
             <!-- EMPLEADOS con SUBMENÚ -->
-            <li class="mb-2 has-submenu">
+            <li class="mb-2 has-submenu" data-submenu-id="empleados">
                 <a href="javascript:void(0)" onclick="toggleSubmenu(this)">
                     <img src="/Esnomina/views/Iconos/Empleado.png" alt="Empleados" width="28" height="20" class="me-2">Empleados +
                 </a>
@@ -132,7 +148,7 @@
                      alt="AgregarEmpleado" width="20" height="20" class="me-2">Agregar Empleado
                    </a>
                     <a href="/Esnomina/index.php?page=cargos">
-                    <img src="/Esnomina/views/Iconos/Cargos.png" alt="cargos" width="20" height="20" class="me-2">Cargos
+                    <img class="" src="/Esnomina/views/Iconos/Cargos.png" alt="cargos" width="20" height="20" class="me-2">Cargos
                    </a>
                     <a href="/Esnomina/index.php?page=departamentos">
                     <img src="/Esnomina/views/Iconos/Departamentos.png" alt="Departamentos" width="20" height="20" class="me-2">Departamentos
@@ -146,7 +162,7 @@
                 </a>
             </li>
 
-             <li class="mb-2 has-submenu">
+             <li class="mb-2 has-submenu" data-submenu-id="reportes">
                 <a href="javascript:void(0)" onclick="toggleSubmenu(this)">
                     <img src="/Esnomina/views/Iconos/Barras.png" alt="Reportes" width="20" height="22" class="me-2">Reportes +
                 </a>
@@ -162,7 +178,7 @@
                 </a>
                 </ul>
              </li>
-             <li class="mb-2 has-submenu">
+             <li class="mb-2 has-submenu" data-submenu-id="configuracion">
                 <a href="javascript:void(0)" onclick="toggleSubmenu(this)">
                     <img src="/Esnomina/views/Iconos/TuercaDinero.png" alt="Reportes" width="20" height="22" class="me-2">Configuracion +
                 </a>
@@ -176,10 +192,59 @@
     </nav>
     
     <script>
+        // Persistencia en localStorage de submenús abiertos
+        function loadOpenSubmenus() {
+            try { return JSON.parse(localStorage.getItem('openSubmenus') || '{}'); } catch (e) { return {}; }
+        }
+        function saveOpenSubmenus(state) {
+            localStorage.setItem('openSubmenus', JSON.stringify(state));
+        }
+
         function toggleSubmenu(element) {
             const parent = element.parentElement;
-            parent.classList.toggle("open");
+            const id = parent.dataset.submenuId || parent.textContent.trim();
+            parent.classList.toggle('open');
+            const state = loadOpenSubmenus();
+            state[id] = parent.classList.contains('open');
+            saveOpenSubmenus(state);
         }
+
+        // Restaurar estado al cargar y auto-abrir según la página actual
+        document.addEventListener('DOMContentLoaded', function () {
+            const state = loadOpenSubmenus();
+            document.querySelectorAll('.has-submenu').forEach(function (li) {
+                const id = li.dataset.submenuId || li.textContent.trim();
+                if (state[id]) li.classList.add('open');
+            });
+
+            // Si no hay estado guardado, abre el grupo que contiene el enlace actual
+            const currentHref = window.location.href.replace(/#.*$/, '');
+            const activeLink = Array.from(document.querySelectorAll('.submenu a')).find(a => (
+                a.href && a.href.replace(/#.*$/, '') === currentHref
+            ) || (
+                a.pathname === window.location.pathname && (a.search === '' || a.search === window.location.search)
+            ));
+            if (activeLink) {
+                const li = activeLink.closest('.has-submenu');
+                if (li && !li.classList.contains('open')) {
+                    li.classList.add('open');
+                    const id = li.dataset.submenuId || li.textContent.trim();
+                    state[id] = true;
+                    saveOpenSubmenus(state);
+                }
+            }
+
+            // Inserta spans con máscara de degradado antes de cada icono PNG en submenús
+            const imgs = document.querySelectorAll('.submenu a img');
+            imgs.forEach(function (img) {
+                const a = img.closest('a');
+                if (!a || a.querySelector('.icon-gradient')) return; // evita duplicados
+                const span = document.createElement('span');
+                span.className = 'icon-gradient';
+                span.style.setProperty('--icon', `url('${img.getAttribute('src')}')`);
+                a.insertBefore(span, img);
+            });
+        });
     </script>
 </body>
 </html>

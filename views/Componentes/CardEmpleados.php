@@ -12,7 +12,7 @@
 }
 
 </style>
-<div class="card text-start mb-4" style="min-width: 280px; height:100px;">
+<div class="card text-start mb-4 border-0 shadow-lg" style="min-width: 280px; height:100px;">
   <div class="card-body">
     <h6 class="card-title">Empleados Activos</h6>
     <h3 class="card-text">100</h3>

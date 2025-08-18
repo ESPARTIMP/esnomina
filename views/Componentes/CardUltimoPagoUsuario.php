@@ -1,7 +1,7 @@
 <?php
 // CardProximoPagoUsuario.php
 ?>
-<div class="card mb-4" style="min-width: 280px;">
+<div class="card card border-0 shadow-lg mb-4" style="min-width: 280px;">
   <div class="card-body">
     <h6 class="card-title mb-3" style="font-weight: 600; color: #232946;">Ultimos Pagos</h6>
     <div class="table-responsive">

@@ -59,7 +59,7 @@
         }
         ?>
        
-        <div class="card mb-4 border-0">
+  <div class="card mb-4 border-0 shadow-lg">
           <div class="row d-flex mb-4 justify-content-end">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-end">
               <a href="/Esnomina/views/CrearEmpleado.php" class="btn btn-primary w-100">

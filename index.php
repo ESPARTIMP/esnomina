@@ -16,7 +16,7 @@ $rutas = [
     'CrearEmpleado' =>'views/Login/Login.php',
     'cargos' => 'views/Cargos.php',
     'persenciones' => 'views/Persenciones.php',
-    'bancosPagos' => 'views/BancosPagos.php',
+    'bancosPagos' =>'views/BancosPagos.php',
     'nav' => 'views/Nav.php'
     
     

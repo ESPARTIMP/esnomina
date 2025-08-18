@@ -59,7 +59,7 @@
         }
         ?>
  
-        <div class="card mb-4 border-0">
+  <div class="card mb-4 border-0 shadow-lg">
               <div class="row d-flex  mb-4 justify-content-end ">
                 <div class="col-3  ">
                      <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalAgregarDepartamento">

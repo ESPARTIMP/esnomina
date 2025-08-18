@@ -37,10 +37,6 @@
               <input type="number" class="form-control" id="empleados" name="empleados" min="0" value="0">
             </div>
             <div class="col-12">
-              <label for="descripcion" class="form-label">Descripción</label>
-              <textarea class="form-control" id="descripcion" name="descripcion" rows="2"></textarea>
-            </div>
-            <div class="col-12">
               <label for="estado" class="form-label">Estado</label>
               <select class="form-select" id="estado" name="estado">
                 <option value="Activo">Activo</option>

@@ -126,7 +126,7 @@
                             <!-- Información personal -->
                             <div class="col-12 col-lg-7">
                                 <h1 class="h3 mb-4">Datos Personales</h1>
-                                <div class="card">
+                                <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Personales</h5>
                                         <div class="row">
@@ -204,7 +204,7 @@
                             <!-- Información empresarial -->
                             <div class="col-12 col-lg-5">
                                 <h1 class="h3 mb-4">Datos Empresariales</h1>
-                                <div class="card">
+                                <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Empresariales</h5>
 
@@ -258,7 +258,7 @@
                             </div>
                             <div class="col-12 col-lg-3">
                                 <h1 class="h3 mb-4">Observaciones</h1>
-                                <div class="card">
+                                <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <div class="row">
                                            <textarea name="observacion" id="observacion" class="observacion-control" rows="8" placeholder="Ingrese los datos del empleado aquí..."></textarea>
@@ -268,7 +268,7 @@
                             </div>
                              <div class="col-12 col-lg-9">
                                 <h1 class="h3 mb-4">Ingresos</h1>
-                                <div class="card">
+                                <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos de Ingresos</h5>
 

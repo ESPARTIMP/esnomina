@@ -1,10 +1,12 @@
 <?php
 // GraficaCostos.php - Gráfica de pastel (distribución de costos)
 ?>
-<div class="card mb-4">
-  <div class="card-body">
+<div class="card mb-4 border-0 shadow-lg">
+    <div class="card-body">
     <h6 class="card-title" style="font-weight: 600; color: #232946;">Distribución De Costos</h6>
-    <canvas id="graficaCostos" height="300"></canvas>
+        <div class="d-flex justify-content-center">
+            <canvas id="graficaCostos" style="width: 220px; height: 220px;"></canvas>
+        </div>
   </div>
 </div>
 <script>
@@ -24,7 +26,8 @@ new Chart(ctxCostos, {
         }]
     },
     options: {
-        responsive: true,
+                responsive: true,
+                maintainAspectRatio: false,
         plugins: {
             legend: { position: 'bottom' },
         }
