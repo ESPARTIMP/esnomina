@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración</title>
+    <title>Bancos Pagos</title>
 </head>
 <body>
   <?php include 'Nav.php'; ?>
@@ -14,7 +14,7 @@
       </aside>
       <main class="col-12 col-md-10 pt-4">
         <div style="margin-left:230px; margin-top:70px; padding:30px;">
-          <h1 class="justify-content-center">Configuración</h1>
+          <h1 class="justify-content-center">Bancos Pagos</h1>
         </div>
       </main>
     </div>

@@ -113,7 +113,6 @@
       </main>
     </div>
   </div>
- <?php include __DIR__ . 'views/CrearEmpleado.php'; ?>
 
 <script>
 // Carga Bootstrap bundle solo una vez (si no lo trae Nav.php)

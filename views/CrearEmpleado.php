@@ -1,34 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Registro de Empleados</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+    <!-- International Telephone Input CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
 
+    <!-- Estilos personalizados -->
     <style>
         body {
             background: #f4f4f4;
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 1rem;
         }
+
+      
+
         .container {
-          
-        
             background: #fff;
             padding: 2px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
+
         .fieldset-custom {
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
+            
         }
+
+
         .btn-personalizado {
             background-color: #ff2646;
             border: none;
@@ -40,9 +46,11 @@
             width: 100%;
             max-width: 300px;
         }
+
         .btn-personalizado:hover {
             background-color: #ca2339;
         }
+
         .secciones-botones {
             display: flex;
             flex-wrap: wrap;
@@ -50,292 +58,308 @@
             gap: 10px;
             margin-top: 20px;
         }
+
         .iti {
             width: 100%;
         }
+
         .iti input {
             width: 100%;
         }
+
+        input{
+              
+           
+        }
+
         @media (max-width: 768px) {
-            .container {
-                max-width: 100%;
-                padding: 10px;
-            }
-            .fieldset-custom {
-                padding: 10px;
-            }
-            .btn-personalizado {
-                max-width: 100%;
-                padding: 10px 10px;
-            }
+            .container { max-width: 100%; padding: 10px; }
+            .fieldset-custom { padding: 10px; }
+            .btn-personalizado { max-width: 100%; padding: 10px 10px; }
         }
+
         @media (max-width: 576px) {
-            .container {
-                padding: 5px;
-            }
-            .fieldset-custom {
-                padding: 5px;
-            }
-            .btn-personalizado {
-                padding: 8px 5px;
-            }
+            .container { padding: 5px; }
+            .fieldset-custom { padding: 5px; }
+            .btn-personalizado { padding: 8px 5px; }
         }
+
+         textarea {
+           
+            border:none;
+         }
     </style>
+
+    <!-- Función para vista previa de la foto -->
     <script>
-    function mostrarVistaPrevia(event) {
-        const input = event.target;
-        const preview = document.getElementById('vistaPreviaFoto');
-        if (input.files && input.files[0]) {
-            preview.src = URL.createObjectURL(input.files[0]);
-            preview.style.display = 'block';
-        } else {
-            preview.style.display = 'none';
+        function mostrarVistaPrevia(event) {
+            const input = event.target;
+            const preview = document.getElementById('vistaPreviaFoto');
+            if (input.files && input.files[0]) {
+                preview.src = URL.createObjectURL(input.files[0]);
+                preview.style.display = 'block';
+            } else {
+                preview.style.display = 'none';
+            }
         }
-    }
     </script>
-      
-     
-    </style>
 </head>
+
 <body>
-  <?php include 'Nav.php'; ?>
-  
-  <div class="container-fluid pt-5">
-    <div class="row">
-      <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
-        <?php include 'Menu.php'; ?>
-      </aside>
-      <main class="col-10 col-md-10 pt-4">
-             <form method="POST" action="procesar_nomina.php">
-                <!-- Datos del Empleado -->
-                <fieldset class="fieldset-custom" id="datos-empleado">
-                    <legend class="fw-bold">Datos del Empleado</legend>
-                    <div class="row">
+    <!-- Navbar -->
+    <?php include 'Nav.php'; ?>
 
-                    <!-- Nombre completo -->
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre completo" required>
+    <div class="container-fluid pt-5">
+        <div class="row">
+            <!-- Menú lateral -->
+            <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
+                <?php include 'Menu.php'; ?>
+            </aside>
+
+            <!-- Contenido principal -->
+            <main class="col-12 col-md-10 pt-4">
+                <form method="POST" action="procesar_nomina.php" enctype="multipart/form-data">
+
+                    <!-- ======================== Datos Personales ======================== -->
+                    <fieldset class="fieldset-custom" id="datos-empleado">
+                        <div class="row mb-4">
+                            <!-- Información personal -->
+                            <div class="col-12 col-lg-7">
+                                <h1 class="h3 mb-4">Datos Personales</h1>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Datos Personales</h5>
+                                        <div class="row">
+
+                                            <!--Cédula-->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="nombre" class="form-label">Nombre completo</label>
+                                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre completo" required>
+                                            </div>
+
+                                            <!-- Fecha Nacimiento -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                                            </div>
+                                            <!-- Nombre Completo -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="nombre_completo" class="form-label">Nombre Completo</label>
+                                                <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" placeholder="Ingrese nombre completo" required>
+                                            </div>
+
+                                             <!--Lugar de Nacimiento-->
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lugar_nacimiento" class="form-label">Lugar de Nacimiento</label>
+                                                <input type="text" class="form-control" id="lugar_nacimiento" name="lugar_nacimiento" placeholder="Ingrese lugar de nacimiento" required>
+                                            </div>
+
+                                            <!--Apellido-->
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="apellido" class="form-label">Apellido</label>
+                                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
+                                            </div>
+
+                                            <!--Residencia-->
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="residencia" class="form-label">Residencia</label>
+                                                <input type="text" class="form-control" id="residencia" name="residencia" placeholder="Ingrese residencia" required>
+                                            </div>
+                                            <!--Sexo-->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="sexo" class="form-label">Sexo</label>
+                                                <select class="form-select" id="sexo" name="sexo" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="masculino">Masculino</option>
+                                                    <option value="femenino">Femenino</option>
+                                                    <option value="otro">Otro</option>
+                                                </select>
+                                            </div>
+
+                                            <!--Telefono-->
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="telefono" class="form-label">Teléfono</label>
+                                                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese teléfono" maxlength="15" required>
+                                            </div>
+                                              
+                                            <!--Email-->
+                                            <div class="col-12 mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email" required>
+                                            </div>
+
+                                            <br>
+
+                                        </div>
+
+                                    </div>
+                                        
+                                </div>
+                            </div>
+
+                            <!-- Información empresarial -->
+                            <div class="col-12 col-lg-5">
+                                <h1 class="h3 mb-4">Datos Empresariales</h1>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Datos Empresariales</h5>
+
+                                        <!-- Fecha de ingreso -->
+                                        <div class="col-md-12 mb-3">
+                                            <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
+                                            <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
+                                        </div>
+
+                                        <!-- Salario básico -->
+                                        <div class="col-md-12 mb-3">
+                                            <label for="salario" class="form-label">Salario básico</label>
+                                            <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario">
+                                        </div>
+
+                                        <!-- Tipo de contrato -->
+                                        <div class="col-md-12">
+                                            <label for="tipo_contrato" class="form-label">Tipo de contrato</label>
+                                            <select class="form-select" id="tipo_contrato" name="tipo_contrato">
+                                                <option value="">Seleccione</option>
+                                                <option value="fijo">Fijo</option>
+                                                <option value="temporal">Temporal</option>
+                                                <option value="por_hora">Por hora</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Banco -->
+                                        <div class="col-md-12 mb-3">
+                                            <label for="banco" class="form-label">Banco</label>
+                                            <select class="form-select" id="banco" name="banco">
+                                                <option value="">Seleccione</option>
+                                                <option value="Banco Central de la República Dominicana">Banco Central de la República Dominicana</option>
+                                                <option value="Banreservas">Banreservas</option>
+                                                <option value="Banco Popular">Banco Popular</option>
+                                                <!-- Otros bancos omitidos para brevedad -->
+                                            </select>
+                                        </div>
+
+                                        <!-- Foto -->
+                                        <div class="col-md-12 mb-3">
+                                            <label for="foto" class="form-label">Foto del empleado</label>
+                                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="mostrarVistaPrevia(event)">
+                                            <small class="form-text text-muted">Seleccione una foto desde los archivos de su dispositivo.</small>
+                                            <div class="mt-2">
+                                                <img id="vistaPreviaFoto" src="#" alt="Vista previa de la foto 4x4" style="display:none; width: 120px; height: 120px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <h1 class="h3 mb-4">Observaciones</h1>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                           <textarea name="observacion" id="observacion" class="observacion-control" rows="8" placeholder="Ingrese los datos del empleado aquí..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-12 col-lg-9">
+                                <h1 class="h3 mb-4">Ingresos</h1>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Datos de Ingresos</h5>
+
+                                        <div class="row">
+                                        <!--Sexo-->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="nomina" class="form-label">Nomina</label>
+                                                <select class="form-select" id="nomina" name="nomina" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="mensual">Mensual</option>
+                                                    <option value="quincenal">Quincenal</option>
+                                                    <option value="otro">Otro</option>
+                                                </select>
+                                            </div>
+
+                                             <div class="col-md-6 mb-3">
+                                                <label for="numero_cuenta" class="form-label">Numero de Cuenta</label>
+                                                <input type="text" class="form-control" id="numero_cuenta" name="numero_cuenta" required>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="banco" class="form-label">Banco</label>
+                                                <select class="form-select" id="banco" name="banco" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="banco1">Popular</option>
+                                                    <option value="banco2">Banreservas</option>
+                                                    <option value="banco3">Scotiabank</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="salario" class="form-label">Salario</label>
+                                                <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario" required>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Botón para mostrar Datos Laborales -->
+                    <div class="text-center mb-4">
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#datosLaboralesCollapse" id="mostrarLaborales">
+                            <i class="bi bi-plus-square"></i> Agregar Datos Laborales
+                        </button>
                     </div>
 
-                    <!-- cedula -->
-                    <div class="col-md-6 mb-3">
-                        <label for="cedula" class="form-label">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese cédula" maxlength="18" required>
-                    </div>
-
-                    <!--direccion --> 
-                    <div class="col-md-6 mb-3">
-                        <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese dirección" required>
-                    </div>
-
-                    <!-- Telefono --> 
-                    <div class="col-md-6 mb-3">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control w-100" id="telefono" name="telefono" required>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email" required>
-                    </div>
-
-                    <!--Cargo o Puesto -->
-
-                    <div class="col-md-6 mb-3">
-                        <label for="cargo" class="form-label">Cargo / Puesto</label>
-                        <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Ingrese cargo o puesto" required>
-                    </div>
-
-                    <!-- Fecha de ingreso -->
-                    <div class="col-md-6 mb-3">
-                        <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
-                        <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
-                    </div>
-
-                    <!--Salario basico -->
-                    <div class="col-md-6 mb-3">
-                        <label for="salario" class="form-label">Salario básico</label>
-                        <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario">
-                    </div>
-
-                    <!-- Tipo de contrato -->
-                    <div class="col-md-6">
-                        <label for="tipo_contrato" class="form-label">Tipo de contrato</label>
-                        <select class="form-select" id="tipo_contrato" name="tipo_contrato">
-                            <option value="">Seleccione</option>
-                            <option value="fijo">Fijo</option>
-                            <option value="temporal">Temporal</option>
-                            <option value="por_hora">Por hora</option>
-                        </select>
-                    </div>
-
-                    <!-- Estado civil -->
-                    <div class="col-md-6 mb-3">
-                        <label for="estado_civil" class="form-label">Estado civil</label>
-                        <select class="form-select" id="estado_civil" name="estado_civil">
-                            <option value="">Seleccione</option>
-                            <option value="soltero">Soltero</option>
-                            <option value="casado">Casado</option>
-                            <option value="divorciado">Divorciado</option>
-                            <option value="viudo">Viudo</option>
-                            <option value="Unión libre">Unión libre</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                       
-                    <!-- Dependientes -->
-                    <div class="col-md-6 mb-3">
-                        <label for="dependientes" class="form-label">Dependientes</label>
-                        <input type="number" class="form-control" id="dependientes" name="dependientes" min="0">
-                    </div>
-
-                    <!--Bancos-->
-                    <div class="col-md-6 mb-3">
-                        <label for="banco" class="form-label">Banco</label>
-                        <select class="form-select" id="banco" name="banco">
-                            <option value="">Seleccione</option>
-                            <option value="Banco Central de la República Dominicana">Banco Central de la República Dominicana</option>
-                            <option value="Banreservas">Banreservas</option>
-                            <option value="Banco Popular">Banco Popular</option>
-                            <option value="Banco BHD León">Banco BHD León</option>
-                            <option value="Banco del Progreso">Banco del Progreso</option>
-                            <option value="Banco Vimenca">Banco Vimenca</option>
-                            <option value="APAP">APAP (Asociación Popular de Ahorros y Préstamos)</option>
-                            <option value="Scotiabank República Dominicana">Scotiabank República Dominicana</option>
-                            <option value="Banco Santa Cruz">Banco Santa Cruz</option>
-                            <option value="Citibank República Dominicana">Citibank República Dominicana</option>
-                            <option value="Banco López de Haro">Banco López de Haro</option>
-                            <option value="Banesco">Banesco</option>
-                            <option value="Asociación Cibao de Ahorros y Préstamos">Asociación Cibao de Ahorros y Préstamos</option>
-                            <option value="Asociación La Nacional de Ahorros y Préstamos">Asociación La Nacional de Ahorros y Préstamos</option>
-                            <option value="BDI">BDI (Banco de Desarrollo Industrial)</option>
-                            <option value="Banco Promerica">Banco Promerica</option>
-                            <option value="Bancamérica">Bancamérica</option>
-                            <option value="Banco Atlántico">Banco Atlántico</option>
-                            <option value="Bancotuí">Bancotuí</option>
-                            <option value="Banco BDA">Banco BDA</option>
-                            <option value="ADOPEM">ADOPEM</option>
-                            <option value="Banco Agrícola de la República Dominicana">Banco Agrícola de la República Dominicana</option>
-                            <option value="Banco Ademi">Banco Ademi</option>
-                            <option value="Confisa">Confisa</option>
-                            <option value="Idecosa Desarrollo">Idecosa Desarrollo</option>
-                            <option value="Banco Empire">Banco Empire</option>
-                            <option value="Banco Motor Crédito">Banco Motor Crédito</option>
-                            <option value="Banco Río">Banco Río</option>
-                            <option value="Banco Providencial">Banco Providencial</option>
-                            <option value="Banco de Tierras">Banco de Tierras</option>
-                            <option value="Gruficorp">Gruficorp</option>
-                            <option value="Cofaci">Cofaci</option>
-                            <option value="Atlas">Atlas</option>
-                            <option value="Bonanza">Bonanza</option>
-                            <option value="Bellbank">Bellbank</option>
-                            <option value="Fihogar">Fihogar</option>
-                            <option value="Micro Banco">Micro Banco</option>
-                            <option value="Banco Unión">Banco Unión</option>
-                        </select>
-                    </div>
-
-                  
                    
 
-                    <!-- Foto del empleado -->
-                    <div class="col-md-6 mb-3">
-                            <label for="foto" class="form-label">Foto del empleado</label>
-                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="mostrarVistaPrevia(event)">
-                            <small class="form-text text-muted">Seleccione una foto desde los archivos de su dispositivo.</small>
-                            <div class="mt-2">
-                                <img id="vistaPreviaFoto" src="#" alt="Vista previa de la foto 4x4" style="display:none; width: 120px; height: 120px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
-                            </div>
+                    <!-- Botón final -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn-personalizado">
+                            <i class="bi bi-person-add"></i> Agregar
+                        </button>
                     </div>
-    
-                </div>
-            </fieldset>
 
-            <!-- Botón para agregar los Datos Laborales -->
-            <div class="text-center mb-4">
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#datosLaboralesCollapse" id="mostrarLaborales">
-                   <i class="bi bi-plus-square"></i> Agregar Datos Laborales
-                </button>
-            </div>
-
-            <!-- Datos Laborales (ocultos al inicio) -->
-            <div class="collapse" id="datosLaboralesCollapse">
-                <fieldset class="fieldset-custom" id="datos-laborales">
-                    <legend class="fw-bold">Datos Laborales</legend>
-                    <div class="row">
-
-                    <!--Horas Trabajadas-->
-                        <div class="col-md-6 mb-3">
-                            <label for="horas_trabajadas" class="form-label">Horas trabajadas</label>
-                            <input type="text" class="form-control" id="horas_trabajadas" name="horas_trabajadas" placeholder="Ej: 160 normales, 10 extras">
-                        </div>
-
-                        <!--Dias Trabajadores-->
-                        <div class="col-md-6 mb-3">
-                            <label for="dias_trabajados" class="form-label">Días trabajados</label>
-                            <input type="number" class="form-control" id="dias_trabajados" name="dias_trabajados" min="0">
-                        </div>
-
-                        <!--Dias de ausencias-->
-                        <div class="col-md-6 mb-3">
-                            <label for="dias_ausencia" class="form-label">Días de ausencia</label>
-                            <input type="text" class="form-control" id="dias_ausencia" name="dias_ausencia" placeholder="Ej: 2 justificadas, 1 no justificada">
-                        </div> 
-
-                    </div>
-                </fieldset>
-            </div>
-
-            <!-- Botón final -->
-            <div class="text-center mt-4">
-                <button type="submit" class="btn-personalizado">
-                    <i class="bi bi-person-add"></i> Agregar
-                </button>
-            </div>
-        </form>
+                </form>
+            </main>
+        </div>
     </div>
-                 
-      </main>
-    </div>
-  </div>
 
-  
+    <!-- ======================== Scripts ======================== -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- International Telephone Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
-    <!-- Scroll suave al abrir Datos Laborales -->
     <script>
+        // Scroll suave al abrir Datos Laborales
         document.getElementById('mostrarLaborales').addEventListener('click', function () {
             setTimeout(() => {
                 document.getElementById('datos-laborales').scrollIntoView({ behavior: 'smooth' });
-            }, 300); // espera a que se abra el collapse
+            }, 300); 
+        });
+
+        // Inicialización de IntlTelInput
+        const input = document.querySelector("#telefono");
+        const iti = window.intlTelInput(input, {
+            initialCountry: "do",
+            preferredCountries: ["do", "us", "es", "mx", "co"],
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+
+        // Enviar número completo al backend
+        document.querySelector("form").addEventListener("submit", function() {
+            input.value = iti.getNumber(); 
         });
     </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-  <script>
-    const input = document.querySelector("#telefono");
-    const iti = window.intlTelInput(input, {
-        initialCountry: "do", // República Dominicana por defecto
-        preferredCountries: ["do", "us", "es", "mx", "co"], // Países preferidos
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-    });
-
-    // Opcional: para enviar el número completo en formato internacional al backend PHP
-    document.querySelector("form").addEventListener("submit", function() {
-        const numeroCompleto = iti.getNumber(); 
-        input.value = numeroCompleto;
-    });
-  </script>
-
 </body>
 </html>
-
-
-
-
-
-
