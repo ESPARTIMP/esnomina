@@ -8,7 +8,7 @@
   </div>
 
   <div class="card-footer p-0" style="margin-top: 10px; background: transparent; border-top: none;">
-    <a href="/Esnomina/index.php?page=nominas" class="btn w-100 py-2" role="button" style="background-color:#A1B4FF; color:#fff; border-color:#A1B4FF;" >
+    <a href="/Esnomina/index.php?page=nominas" class="btn w-100 py-2" role="button" style="background-color:#A1B4FF; color:#fff; border:1px solid #A1B4FF; border-bottom-left-radius:.375rem; border-bottom-right-radius:0;">
       Crear Nomina
     </a>
   </div>

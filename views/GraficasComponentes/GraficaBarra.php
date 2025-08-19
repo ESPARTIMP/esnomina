@@ -3,14 +3,14 @@
 ?>
 <div class="card mb-4 border-0 shadow-lg">
     <div class="card-body">
-        <h6 class="card-title">Horas Trabajadas vs Horas Extras</h6>
-        <canvas id="graficaBarra" class="chart-canvas"></canvas>
-    </div>
+        <h6 class="card-title" style="font-weight: 600; color: #232946;">Horas Trabajadas vs Horas Extras</h6>
+        <canvas id="graficaBarra" class="chart-canvas" style="width: 220px; height: 125px;"></canvas>
+         </div>
   
-</div>
-<script>
-const ctx = document.getElementById('graficaBarra').getContext('2d');
-new Chart(ctx, {
+       </div>
+   <script>
+   const ctx = document.getElementById('graficaBarra').getContext('2d');
+   new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto'],
@@ -29,6 +29,7 @@ new Chart(ctx, {
     },
     options: {
         responsive: true,
+
         plugins: {
             legend: { position: 'top' },
         }
