@@ -34,10 +34,10 @@
   <?php include __DIR__ . '/Nav.php'; ?>
   
   <div class="container-fluid pt-5" style = "background:#f5f7ffff;">
-    <div class="row">
-      <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
+  <div class="row">
+  <aside class="col-12 col-md-2 p-0 sidebar-fill">
   <?php include __DIR__ . '/Menu.php'; ?>
-      </aside>
+  </aside>
       <main class="col-12 col-md-10 pt-4">
         <h1 class="h3 mb-4">Empleado</h1>
 
@@ -75,8 +75,8 @@
                 <!-- Encabezados de la tabla -->
                 <thead class="table-light">
                   <tr>
-                    <th>Nombre</th>
                     <th>Cédula</th>
+                    <th>Nombre</th>
                     <th>Código</th>
                     <th>Estado</th>
                     <th class="text-center" style="width: 140px;">Acciones</th>
@@ -86,8 +86,9 @@
                 <tbody>
                   <?php foreach ($empleado as $emp): ?>
                     <tr>
-                      <td><?= htmlspecialchars($emp['nombre']) ?></td>
+
                       <td><?= htmlspecialchars($emp['cedula']) ?></td>
+                      <td><?= htmlspecialchars($emp['nombre']) ?></td>
                       <td><?= htmlspecialchars($emp['codigo']) ?></td>
                       <td>
                         <span class="badge <?= $emp['estado']==='Activo' ? 'bg-success' : 'bg-secondary' ?>">

@@ -108,7 +108,7 @@
     <div class="container-fluid pt-5" style="background:#f5f7ffff;">
         <div class="row">
             <!-- Menú lateral -->
-            <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
+            <aside class="col-12 col-md-2 p-0 sidebar-fill">
                 <?php include 'Menu.php'; ?>
             </aside>
 
@@ -128,8 +128,8 @@
 
                                             <!--Cédula-->
                                             <div class="col-md-6 mb-3">
-                                                <label for="nombre" class="form-label">Nombre completo</label>
-                                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre completo" required>
+                                                <label for="cedula" class="form-label">Cédula</label>
+                                                <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Ingrese cédula" required maxlength="14">
                                             </div>
 
                                             <!-- Fecha Nacimiento -->
@@ -139,8 +139,8 @@
                                             </div>
                                             <!-- Nombre Completo -->
                                             <div class="col-md-6 mb-3">
-                                                <label for="nombre_completo" class="form-label">Nombre Completo</label>
-                                                <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" placeholder="Ingrese nombre completo" required>
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
                                             </div>
 
                                              <!--Lugar de Nacimiento-->
@@ -248,7 +248,7 @@
                                         </div>
 
                                     </div>
-                                </div>
+                                    </div>
                             </div>
                             <div class="col-12 col-lg-3  mt-4">
                                 <div class="card border-0 shadow-lg ">

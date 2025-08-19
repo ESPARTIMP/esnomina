@@ -49,10 +49,7 @@
             <td>12 Ago</td>
             <td>RD$50k</td>
           </tr>
-          <tr></tr>
-          <tr></tr>
-          <tr></tr>
-
+          
           
         </tbody>
       </table>

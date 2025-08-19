@@ -35,7 +35,7 @@
 
   <div class="container-fluid pt-5" style="background:#f5f7ffff;">
     <div class="row">
-      <aside class="col-12 col-md-2 p-0 vh-100 overflow-auto">
+  <aside class="col-12 col-md-2 p-0 sidebar-fill">
   <?php include __DIR__ . '/Menu.php'; ?>
       </aside>
       <main class="col-12 col-md-10 pt-4">
