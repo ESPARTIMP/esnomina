@@ -5,6 +5,7 @@ return array (
   'port' => 1433,
   'user' => 'sa',
   'pass' => 'Qwerty,1234',
-  'db_name' => 'nomina3',
+  'db_name' => 'nomina7',
 );
+
 ?>
