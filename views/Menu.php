@@ -120,6 +120,13 @@ body {
             <img src="/Esnomina/views/Iconos/Darshoboard.png" alt="Dashboard">Dashboard
         </a>
     </li>
+<nav class="sidebar">
+<ul>
+    <li>
+        <a href="/Esnomina/index.php?page=inicio">
+            <img src="/Esnomina/views/Iconos/Darshoboard.png" alt="Dashboard">Dashboard
+        </a>
+    </li>
 
     <li class="has-submenu">
         <a onclick="toggleSubmenu(this)">
@@ -132,6 +139,11 @@ body {
         </ul>
     </li>
 
+    <li>
+        <a href="/Esnomina/index.php?page=nominas">
+            <img src="/Esnomina/views/Iconos/Nominas.png" alt="Nominas">Nominas
+        </a>
+    </li>
     <li>
         <a href="/Esnomina/index.php?page=nominas">
             <img src="/Esnomina/views/Iconos/Nominas.png" alt="Nominas">Nominas
