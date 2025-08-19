@@ -1,5 +1,5 @@
 <?php
-$config_file = __DIR__ .'config_db.php';
+$config_file = __DIR__ .'/config_db.php';
 
 // Verificar que exista la configuración
 if (!file_exists($config_file)) {
@@ -79,5 +79,5 @@ function getConexion($db_type, $host, $user, $pass, $db_name, $port) {
 
 // Variable global
 $pdo = getConexion($db_type, $host, $user, $pass, $db_name, $port);
-echo "Conexión exitosa a $db_type";
+//echo "Conexión exitosa a $db_type";
 ?>

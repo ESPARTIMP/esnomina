@@ -106,7 +106,7 @@
     <?php include 'Nav.php'; ?>
 
     <div class="container-fluid pt-5" style="background:#f5f7ffff;">
-        <div class="row">
+        <div class="row">   
             <!-- Menú lateral -->
             <aside class="col-12 col-md-2 p-0 sidebar-fill">
                 <?php include 'Menu.php'; ?>
@@ -114,7 +114,8 @@
 
             <!-- Contenido principal -->
             <main class="col-12 col-md-10 pt-4">
-                <form method="POST" action="procesar_nomina.php" enctype="multipart/form-data">
+            <form method="POST" action="funciones/empleados.php" enctype="multipart/form-data">
+
 
                     <!-- ======================== Datos Personales ======================== -->
                     <fieldset class="fieldset-custom" id="datos-empleado">
@@ -135,7 +136,7 @@
                                             <!-- Fecha Nacimiento -->
                                             <div class="col-md-6 mb-3">
                                                 <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-                                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nac" required>
                                             </div>
                                             <!-- Nombre Completo -->
                                             <div class="col-md-6 mb-3">
