@@ -6,7 +6,7 @@
     <h6 class="card-title">Horas Extras Pagadas</h6>
     <h3 class="card-text">350h</h3>
   </div>
-  <div class="card-footer" style="font-size:20px; margin-top: 10px; background: #A1B4FF; height: 25px; display: flex; align-items: center; justify-content: start; border-decoration: none; color:white" >
+  <div class="card-footer" style="font-size:20px; margin-top: 10px; background: #A1B4FF; height: 25px; display: flex; align-items: center; justify-content: start; color:white" >
     <small>Generar PDF</small>
   </div>
 </div>

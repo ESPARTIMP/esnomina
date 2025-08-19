@@ -12,45 +12,45 @@
             <th>Fecha</th>
             <th>Pago</th>
           </tr>
-        </thead>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Juam P.</td>
         <tbody>
           <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Juam P.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Juam P.</td>
+            <td>10 Ago</td>
+            <td>RD$50k</td>
+          </tr>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Pedro A.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Pedro A.</td>
+            <td>11 Ago</td>
+            <td>RD$50k</td>
+          </tr>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
+            <td>12 Ago</td>
+            <td>RD$50k</td>
+          </tr>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Juam P.</td>
             <td>10 Ago</td>
             <td>RD$50k</td>
           </tr>
           <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Pedro A.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Pedro A.</td>
             <td>11 Ago</td>
             <td>RD$50k</td>
           </tr>
           <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Kiara B.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
             <td>12 Ago</td>
             <td>RD$50k</td>
           </tr>
           <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Juam P.</td>
-            <td>10 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-          <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Pedro A.</td>
-            <td>11 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-          <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Kiara B.</td>
-            <td>12 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-          <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Kiara B.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
             <td>12 Ago</td>
             <td>RD$50k</td>
           </tr>
             <tr>
-            <td><img src="views\Iconos\Perfil.png" style="width:20px; margin-right:6px;"> Kiara B.</td>
+              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
             <td>12 Ago</td>
             <td>RD$50k</td>
           </tr>
