@@ -68,7 +68,7 @@ $nominas = [
             color: #0c5460;
         }
         .badge-estado {
-            padding: 0.5em 0.8em;
+            padding: 0.6em 0.9em;
             border-radius: 0.25rem;
             font-weight: 500;
         }
@@ -182,7 +182,7 @@ $nominas = [
         }
 
         .boton-finalizar{
-             margin-left:0.3%;
+            margin-left:0.3%;
             margin-top:0.3%;
             background: #B0f0A5;
             border: none;
@@ -236,7 +236,7 @@ $nominas = [
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         /* Texto con mejor contraste */
         letter-spacing: 0.3px;
-}
+        }
       
         @media (max-width: 768px) {
             .main-content {
@@ -263,7 +263,7 @@ $nominas = [
         </div>
 
         <!-- Filtros y búsqueda -->
-        <div class="card shadow-sm">
+        <div class="card shadow-lg">
             <div class="card-body">
                 <div class="row d-flex">
                     <div class="col-md-3">
@@ -307,13 +307,13 @@ $nominas = [
         </div>
 
         <!-- Listado de Nóminas -->
-        <div class="card shadow-sm">
+        <div class="card shadow-lg">
             <div class="card-header">
                 <h5 class="mb-0">Listado De Nóminas</h5>
             </div>
             <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table table-hover mb-0 borderless">
+                <div class="table-responsive table-borderless">
+                    <table class="table table-hover mb-0">
                         <thead>
                             <tr>
                                 <th>Código</th>
@@ -340,12 +340,12 @@ $nominas = [
                                     if ($nomina['estado'] == 'Confirmada') $clase_estado = 'estado-confirmada';
                                     if ($nomina['estado'] == 'Pendiente') $clase_estado = 'estado-pendiente';
                                     ?>
-                                    <span class="badge badge-estado <?php echo $clase_estado; ?>">
+                                    <span class="badge-estado <?php echo $clase_estado; ?>">
                                         <?php echo $nomina['estado']; ?>
                                     </span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='?page=nominasInfo&id=<?php echo $nomina['codigo']; ?>'">
                                         <i class="bi bi-eye"></i> Ver
                                     </button>
                                 </td>

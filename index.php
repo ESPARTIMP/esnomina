@@ -17,6 +17,7 @@ $rutas = [
     'cargos' => 'views/Cargos.php',
     'persenciones' => 'views/Persenciones.php',
     'bancosPagos' =>'views/BancosPagos.php',
+    'nominasInfo' => 'views/NominaInfo.php',
     'nav' => 'views/Nav.php'
     
     

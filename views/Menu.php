@@ -113,7 +113,7 @@ body {
 </style>
 </head>
 <body>
-<nav class="sidebar">
+<nav class="sidebar shadow-lg">
 <ul>
     <li>
         <a href="/Esnomina/index.php?page=inicio">

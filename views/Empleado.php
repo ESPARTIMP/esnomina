@@ -71,7 +71,7 @@
           <div class="card-header fw-semibold">Listado de Empleados</div>
           <div class="card-body p-0">
             <div class="table-responsive">
-              <table class="table table-bordered table-hover mb-0 align-middle">
+              <table class="table table-borderless table-hover mb-0 align-middle">
                 <!-- Encabezados de la tabla -->
                 <thead class="table-light">
                   <tr>

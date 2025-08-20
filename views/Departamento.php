@@ -71,7 +71,7 @@
           <div class="card-header fw-semibold">Listado de Departamentos</div>
           <div class="card-body  p-0">
             <div class="table-responsive">
-              <table class="table table-bordered table-hover mb-0 align-middle">
+              <table class="table table-hover table-borderless mb-0 align-middle table-">
                 <thead class="table-light">
                   <tr>
                     <th>Nombre</th>

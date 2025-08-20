@@ -6,7 +6,21 @@
     <h6 class="card-title">Horas Extras Pagadas</h6>
     <h3 class="card-text">350h</h3>
   </div>
-  <div class="card-footer" style="font-size:20px; margin-top: 10px; background: #A1B4FF; height: 25px; display: flex; align-items: center; justify-content: start; color:white" >
-    <small>Generar PDF</small>
-  </div>
+
+  <style>
+    .boton-prueba{
+      margin-left:0.3%;
+      margin-top:0.3%;
+      background: #A1B4FF;
+      border: none;
+      color: white;
+      padding: 7px 25px;
+      border-bottom-right-radius: 50px; 
+      box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+      transition: all 0.3s ease;
+      width: 50%;
+    }
+  </style>
+
+  <button class="boton-prueba mt-3">Generar PDF</button>
 </div>

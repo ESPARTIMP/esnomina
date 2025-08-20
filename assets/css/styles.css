@@ -31,5 +31,18 @@
    border-bottom-right-radius: 20%;
 }
 
+.button-index{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #B0f0A5;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-bottom-right-radius: 50px; 
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  transition: all 0.3s ease;
+ 
+}
+
 
 

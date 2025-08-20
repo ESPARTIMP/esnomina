@@ -19,16 +19,31 @@
             font-size: 1rem;
         }
 
+
+        .boton-guardar{
+            margin-left:0.3%;
+            margin-top:0.3%;
+            background: #AEF0FF;
+            border: none;
+            color: white;
+            padding: 5px 25px;
+            border-bottom-right-radius: 50px; 
+            box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+            transition: all 0.3s ease;
+            width: 19%;
+        }
+
       
 
         .container {
             background: #fff;
-            padding: 2px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .fieldset-custom {
-            padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
             
@@ -46,6 +61,16 @@
             width: 100%;
             max-width: 300px;
         }
+
+         .boton-regresar {
+           margin-left: 0.3%;
+           margin-top: 0.3%;
+           background: #0E0C35;
+           border: none;
+           color: white;
+           box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+           transition: all 0.3s ease;
+    }
 
         .btn-personalizado:hover {
             background-color: #ca2339;
@@ -103,20 +128,14 @@
 
 <body>
     <!-- Navbar -->
-    <?php include 'Nav.php'; ?>
 
     <div class="container-fluid pt-5" style="background:#f5f7ffff;">
-        <div class="row">   
+        <div class="row justify-content-center">   
             <!-- Menú lateral -->
-            <aside class="col-12 col-md-2 p-0 sidebar-fill">
-                <?php include 'Menu.php'; ?>
-            </aside>
-
+          
             <!-- Contenido principal -->
-            <main class="col-12 col-md-10 pt-4">
+            <main class="col-12 col-md-10 col-lg-11 pt-4 ">
             <form method="POST" action="funciones/empleados.php" enctype="multipart/form-data">
-
-
                     <!-- ======================== Datos Personales ======================== -->
                     <fieldset class="fieldset-custom" id="datos-empleado">
                         <div class="row mb-4">
@@ -203,18 +222,20 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Empresariales</h5>
 
+                                        <!--Fecha de ingreso -->
+
+                                        <div class="col-md-12 mb-3">
+                                            <label>Codigo</label>
+                                            <input type="number" class="form-control" id="codigo" name="codigo" placeholder="Ingrese código del empleado" required maxlength="50">
+                                        </div>
+
                                         <!-- Fecha de ingreso -->
                                         <div class="col-md-12 mb-3">
                                             <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
                                             <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
                                         </div>
 
-                                        <!-- Salario básico -->
-                                        <div class="col-md-12 mb-3">
-                                            <label for="salario" class="form-label">Salario básico</label>
-                                            <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario">
-                                        </div>
-
+                                  
                                         <!-- Tipo de contrato -->
                                         <div class="col-md-12">
                                             <label for="tipo_contrato" class="form-label">Tipo de contrato</label>
@@ -226,15 +247,16 @@
                                             </select>
                                         </div>
 
-                                        <!-- Banco -->
+                                        <!-- Departamento -->
                                         <div class="col-md-12 mb-3">
-                                            <label for="banco" class="form-label">Banco</label>
-                                            <select class="form-select" id="banco" name="banco">
+                                            <label for="departamento" class="form-label">Departamento</label>
+                                            <select class="form-select" id="departamento" name="departamento">
+
+                                            <!--Ejemplo de dato -->
                                                 <option value="">Seleccione</option>
-                                                <option value="Banco Central de la República Dominicana">Banco Central de la República Dominicana</option>
-                                                <option value="Banreservas">Banreservas</option>
-                                                <option value="Banco Popular">Banco Popular</option>
-                                                <!-- Otros bancos omitidos para brevedad -->
+                                                <option value="recursos_humanos">Recursos Humanos</option>
+                                                <option value="finanzas">Finanzas</option>
+                                                <option value="tecnologia">Tecnología</option>
                                             </select>
                                         </div>
 
@@ -260,7 +282,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                              </div>
                                     <div class="col-12 col-lg-9">
                                   <div class="card border-0 shadow-lg mt-4">
                                     <div class="card-body">
@@ -303,27 +325,18 @@
 
                                 </div>
                             </div>
+                              <div class="row">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button class="boton-regresar mt-1">Regresar</button>
+                                        <button class="boton-guardar mt-1">Guardar</button>
+                                    </div>
+                              </div>
                         </div>
                     </fieldset>
-
-                    <!-- Botón para mostrar Datos Laborales -->
-                    <div class="text-center mb-4">
-                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#datosLaboralesCollapse" id="mostrarLaborales">
-                            <i class="bi bi-plus-square"></i> Agregar Datos Laborales
-                        </button>
-                    </div>
-
-                   
-
-                    <!-- Botón final -->
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn-personalizado">
-                            <i class="bi bi-person-add"></i> Agregar
-                        </button>
-                    </div>
-
                 </form>
             </main>
+          
+
         </div>
     </div>
 
