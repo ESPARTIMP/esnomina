@@ -49,6 +49,16 @@
             <td>12 Ago</td>
             <td>RD$50k</td>
           </tr>
+
+            <tr>
+            <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
+            <td>12 Ago</td>
+            <td>RD$50k</td>
+          </tr>
+
+          
+          
+          
           
           
         </tbody>

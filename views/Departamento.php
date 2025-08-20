@@ -105,9 +105,6 @@
               </table>
             </div>
           </div>
-          <div class="card-footer text-muted small">
-            Total: <?= count($departamentos) ?> departamentos
-          </div>
         </div>
         </form>
     </div>

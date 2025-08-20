@@ -104,9 +104,6 @@
               </table>
             </div>
           </div>
-          <div class="card-footer text-muted small">
-            Total: <?= count($empleado) ?> empleados
-          </div>
         </div>
         </form>
     </div>

@@ -8,6 +8,23 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Inicio</title>
+  <style>
+    /* Estilos para mantener un tamaño consistente en los cards */
+    .card-fixed-height {
+      min-height: 180px; /* Altura mínima para los cards de resumen */
+      max-height: 190px; /* Altura máxima para evitar que se estiren demasiado */
+    }
+    
+    .chart-card-fixed-height {
+      min-height: 400px; /* Altura mínima para los cards con gráficas */
+      max-height: 420px; /* Altura máxima para evitar que se estiren demasiado */
+    }
+    
+    .user-payment-card-fixed-height {
+      min-height: 400px; /* Altura mínima para los cards de pagos de usuario */
+      max-height: 400px; /* Altura máxima para evitar que se estiren demasiado */
+    }
+  </style>
 </head>
 <body>
   <!-- Barra superior -->
@@ -17,7 +34,7 @@
     <div class="row">
       
       <!-- Sidebar -->
-  <aside class="col-12 col-md-2 p-0 sidebar-fill">
+      <aside class="col-12 col-md-2 p-0 sidebar-fill">
         <?php include 'Menu.php'; ?>
       </aside>
 
@@ -27,39 +44,57 @@
         <!-- Fila 1: Cards resumen -->
         <section class="row g-4 mb-5">
           <div class="col-12 col-sm-6 col-xl-3">
-            <?php include 'Componentes/CardNomina.php'; ?>
+            <div class="card-fixed-height">
+              <?php include 'Componentes/CardNomina.php'; ?>
+            </div>
           </div>
           <div class="col-12 col-sm-6 col-xl-3">
-            <?php include 'Componentes/CardEmpleados.php'; ?>
+            <div class="card-fixed-height">
+              <?php include 'Componentes/CardEmpleados.php'; ?>
+            </div>
           </div>
           <div class="col-12 col-sm-6 col-xl-3">
-            <?php include 'Componentes/CardHorasExtras.php'; ?>
+            <div class="card-fixed-height">
+              <?php include 'Componentes/CardHorasExtras.php'; ?>
+            </div>
           </div>
           <div class="col-12 col-sm-6 col-xl-3">
-            <?php include 'Componentes/CardProximosPagos.php'; ?>
+            <div class="card-fixed-height">
+              <?php include 'Componentes/CardProximosPagos.php'; ?>
+            </div>
           </div>
         </section>
 
         <!-- Fila 2: Gráfica Nómina + Últimos pagos -->
         <section class="row g-4 mb-4">
           <div class="col-12 col-lg-8">
-            <?php include 'GraficasComponentes/GraficaNomina.php'; ?>
+            <div class="chart-card-fixed-height">
+              <?php include 'GraficasComponentes/GraficaNomina.php'; ?>
+            </div>
           </div>
           <div class="col-12 col-lg-4">
-            <?php include 'Componentes/CardUltimoPagoUsuario.php'; ?>
+            <div class="user-payment-card-fixed-height">
+              <?php include 'Componentes/CardUltimoPagoUsuario.php'; ?>
+            </div>
           </div>
         </section>
 
         <!-- Fila 3: Costos + Barras + Próximo pago -->
         <section class="row g-4 mb-4">
-          <div class="col-12 col-lg-4">
-            <?php include 'GraficasComponentes/GraficaCostos.php'; ?>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="chart-card-fixed-height">
+              <?php include 'GraficasComponentes/GraficaCostos.php'; ?>
+            </div>
           </div>
-          <div class="col-12 col-lg-4">
-            <?php include 'GraficasComponentes/GraficaBarra.php'; ?>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="chart-card-fixed-height">
+              <?php include 'GraficasComponentes/GraficaBarra.php'; ?>
+            </div>
           </div>
-          <div class="col-12 col-lg-4">
-            <?php include 'Componentes/CardProximoPagoUsuario.php'; ?>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="user-payment-card-fixed-height">
+              <?php include 'Componentes/CardProximoPagoUsuario.php'; ?>
+            </div>
           </div>
         </section>
 
