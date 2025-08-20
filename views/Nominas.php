@@ -212,10 +212,24 @@ $nominas = [
         letter-spacing: 0.3px;
         }
       
-        @media (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-            }
+        /* Eliminar bordes de los cards */
+        .card {
+            border: none !important;
+        }
+        
+        .card-header {
+            background-color: transparent;
+            border-bottom: none !important;
+            padding: 1.25rem 1.25rem 0.5rem;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        /* Mantener la sombra para dar profundidad sin bordes */
+        .shadow-lg {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
         }
     </style>
 </head>
