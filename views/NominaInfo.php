@@ -160,7 +160,7 @@
   
   </div>
     <div class="d-flex justify-content-end gap-2">
-      <button class="btn btn-regresar">Regresar</button>
+      <a href="/Esnomina/index.php?page=nominas"><button class="btn btn-regresar">Regresar</button> </a>
       <button class="btn btn-editar">Editar</button>
       <button class="btn btn-finalizar">Finalizar</button>
     </div>

@@ -52,80 +52,54 @@ $nominas = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        /* Estilos originales ... */
 
-
-
+        /* Modificar los estados para que sean solo texto coloreado */
         .estado-revision {
-            background-color: #fff3cdff;
-            color: #f0b70eff;
+            color: #f0b70e; /* Color amarillo para En Revisión */
+            background-color: transparent;
         }
         .estado-confirmada {
-            background-color: #d4edda;
-            color: #155724;
+            color: #155724; /* Color verde para Confirmada */
+            background-color: transparent;
         }
         .estado-pendiente {
-            background-color: #d1ecf1;
-            color: #0c5460;
+            color: #0c5460; /* Color azul para Pendiente */
+            background-color: transparent;
         }
         .badge-estado {
-            padding: 0.6em 0.9em;
-            border-radius: 0.25rem;
-            font-weight: 500;
+            padding: 0;
+            font-weight: 600;
+            border-radius: 0;
+            background-color: transparent;
         }
-        .table-hover tbody tr:hover {
-            background-color: rgba(13, 110, 253, 0.1);
-        }
-        
-        /* Remove borders from tables */
+
+        /* Eliminar completamente todas las líneas de las tablas */
         .table {
             border: none !important;
         }
-       
         
         .table th,
         .table td {
             border: none !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-            
+            border-bottom: none !important;
         }
-
-      
         
         .table thead th {
-          
-          background-color: #f5f7ff ;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-        }
-        
-        /* Remove borders from cards */
-        .card {
-            border: none !important;
-            border-radius: 8px !important;
-        }
-        
-        .card-header {
-            background-color: transparent !important;
+            background-color: #f5f7ff;
             border-bottom: none !important;
-            padding-bottom: 0 !important;
         }
         
-        .card-footer {
-            background-color: transparent !important;
-            border-top: none !important;
+        /* Asegurar que la tabla tenga espaciado adecuado sin las líneas */
+        .table td, .table th {
+            padding: 1rem 0.75rem;
         }
         
-        /* Remove borders from pagination */
-        .page-link {
-            border: none !important;
-            margin-left: 2px;
-            margin-right: 2px;
-            border-radius: 4px !important;
+        /* Mantener el efecto hover para mejorar la usabilidad */
+        .table-hover tbody tr:hover {
+            background-color: rgba(13, 110, 253, 0.05);
         }
         
-        .page-item.active .page-link {
-            background-color: #1d004dff;
-        }
-
         .boton-personalizado {
             background-color: #1d004dff;
             color: white;
@@ -238,10 +212,24 @@ $nominas = [
         letter-spacing: 0.3px;
         }
       
-        @media (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-            }
+        /* Eliminar bordes de los cards */
+        .card {
+            border: none !important;
+        }
+        
+        .card-header {
+            background-color: transparent;
+            border-bottom: none !important;
+            padding: 1.25rem 1.25rem 0.5rem;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        /* Mantener la sombra para dar profundidad sin bordes */
+        .shadow-lg {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
         }
     </style>
 </head>
@@ -257,9 +245,6 @@ $nominas = [
       <main class="col-12 col-md-10" style="padding: 20px;">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3>Gestión de Nóminas</h3>
-            <button class="boton-crear-nomina">
-               + Crear Nómina
-            </button>
         </div>
 
         <!-- Filtros y búsqueda -->
@@ -309,11 +294,17 @@ $nominas = [
         <!-- Listado de Nóminas -->
         <div class="card shadow-lg">
             <div class="card-header">
-                <h5 class="mb-0">Listado De Nóminas</h5>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                 <h5 class="mb-0">Listado De Nóminas</h5>
+                <button class="boton-crear-nomina">
+                + Crear Nómina
+                </button>
+            </div>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive table-borderless">
-                    <table class="table table-hover mb-0">
+                    <table class="table table-hover mb-0 ">
                         <thead>
                             <tr>
                                 <th>Código</th>

@@ -327,8 +327,8 @@
                             </div>
                               <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button class="boton-regresar mt-1">Regresar</button>
-                                        <button class="boton-guardar mt-1">Guardar</button>
+                                        <a href="/Esnomina/index.php?page=empleado" class="boton-regresar mt-1 btn">Regresar</a>
+                                        <button type="submit" class="boton-guardar mt-1">Guardar</button>
                                     </div>
                               </div>
                         </div>
