@@ -12,7 +12,7 @@
 <div class="modal fade" id="modalAgregarDepartamento" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
-      <form action="procesar_departamento.php" method="POST">
+      <form action="views/funciones/empleados.php?consulta=ingresar_departamento" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5">Agregar Departamento</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -21,28 +21,18 @@
         <div class="modal-body">
           <div class="row g-3">
             <div class="col-md-6">
-              <label for="nombre_departamento" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre_departamento" name="nombre_departamento" required>
+              <label for="codigo" class="form-label">Código</label>
+              <input type="text" class="form-control" id="codigo" name="codigo" required>
             </div>
             <div class="col-md-6">
-              <label for="codigo_departamento" class="form-label">Código</label>
-              <input type="text" class="form-control" id="codigo_departamento" name="codigo_departamento" required>
+              <label for="departamento" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="departamento" name="departamento" required>
             </div>
             <div class="col-md-6">
-              <label for="responsable" class="form-label">Responsable</label>
-              <input type="text" class="form-control" id="responsable" name="responsable">
+              <label for="departamento_sup" class="form-label">Departamento Superior</label>
+              <input type="text" class="form-control" id="departamento_sup" name="departamento_sup">
             </div>
-            <div class="col-md-6">
-              <label for="empleados" class="form-label">Empleados</label>
-              <input type="number" class="form-control" id="empleados" name="empleados" min="0" value="0">
-            </div>
-            <div class="col-12">
-              <label for="estado" class="form-label">Estado</label>
-              <select class="form-select" id="estado" name="estado">
-                <option value="Activo">Activo</option>
-                <option value="Inactivo">Inactivo</option>
-              </select>
-            </div>
+           
           </div>
         </div>
 
