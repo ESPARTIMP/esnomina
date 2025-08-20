@@ -1,57 +1,121 @@
----CREACION DE TABLAS NOMINA
--- crear la tabla empleados
+-- CREACION DE BASE DE DATOS Y TABLAS NOMINA
+CREATE DATABASE NOMINA;
+GO
 
-CREATE TABLE USUARIOS (
-    id_usuario INT IDENTITY(1,1) PRIMARY KEY,
-    usuario NVARCHAR(50) NOT NULL UNIQUE,
-    clave NVARCHAR(200) NOT NULL,
-    nombre NVARCHAR(100),
-    email NVARCHAR(100)
-);
+USE NOMINA;
+GO
 
--- Crear la tabla EMPLEADOS
+-- Tabla USUARIOS
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'USUARIOS')
+BEGIN
+    CREATE TABLE USUARIOS (
+        id_usuario INT IDENTITY(1,1) PRIMARY KEY,
+        usuario NVARCHAR(50) NOT NULL UNIQUE,
+        clave NVARCHAR(200) NOT NULL,
+        nombre NVARCHAR(100),
+        email NVARCHAR(100)
+    );
+END
+GO
+
+-- Tabla EMPLEADOS
 IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'EMPLEADOS')
-CREATE  TABLE EMPLEADOS (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-	codigo INT NOT NULL UNIQUE,
-	cedula NVARCHAR(20) NOT NULL UNIQUE,
-    nombre NVARCHAR(50) NOT NULL,
-    apellidos NVARCHAR(50) NOT NULL,
-	sexo NVARCHAR(20),
-	fecha_na date,
-	lugar_na NVARCHAR(100),
-	direccion NVARCHAR(100),
-	telefono NVARCHAR(20),
-    email NVARCHAR(100),
-	situacion NVARCHAR(30),
-	fecha_ing date,
-	tipo_cobro nvarchar(50),
-	banco nvarchar(50),
-	numero_cuen nvarchar(50),
-	tipo_cont nvarchar(20),
-	sueldo_men DECIMAL(12,2),
-	nomina nvarchar(20),
-	departamento nvarchar(50),
-	cargo nvarchar(50),
-	observacion nvarchar(30),
-	foto nvarchar(200),
-	id_usuario_crea INT,
-	fecha_crea datetime2(6)
+BEGIN
+    CREATE TABLE EMPLEADOS (
+        id INT IDENTITY(1,1) PRIMARY KEY,
+        codigo INT NOT NULL UNIQUE,
+        cedula NVARCHAR(20) NOT NULL UNIQUE,
+        nombre NVARCHAR(50) NOT NULL,
+        apellidos NVARCHAR(50) NOT NULL,
+        sexo NVARCHAR(20),
+        fecha_na DATE,
+        lugar_na NVARCHAR(100),
+        direccion NVARCHAR(100),
+        telefono NVARCHAR(20),
+        email NVARCHAR(100),
+        situacion NVARCHAR(30),
+        fecha_ing DATE,
+        tipo_cobro NVARCHAR(50),
+        banco NVARCHAR(50),
+        numero_cuen NVARCHAR(50),
+        tipo_cont NVARCHAR(20),
+        sueldo_men DECIMAL(12,2),
+        nomina NVARCHAR(20),
+        departamento NVARCHAR(50),
+        cargo NVARCHAR(50),
+        observacion NVARCHAR(30),
+        foto NVARCHAR(200),
+        id_usuario_crea INT,
+        fecha_crea DATETIME2(6),
+        CONSTRAINT FK_Empleado_Usuario FOREIGN KEY (id_usuario_crea)
+            REFERENCES USUARIOS(id_usuario)
+    );
+END
+GO
 
-
-	  CONSTRAINT FK_Empleado_Usuario FOREIGN KEY (id_usuario_crea)
-        REFERENCES USUARIOS(id_usuario)
-
-    
-);
-
+-- Tabla DEPARTAMENTO
 IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'DEPARTAMENTO')
+BEGIN
+    CREATE TABLE DEPARTAMENTO(
+        id INT IDENTITY(1,1) PRIMARY KEY,
+        CODIGO NVARCHAR(30),
+        DEPARTAMENTO NVARCHAR(70),
+        DEPARTAMENTO_SUP NVARCHAR(70)
+    );
+END
+GO
 
-CREATE TABLE DEPARTAMENTO(
-   id INT IDENTITY(1,1) PRIMARY KEY,
-   CODIGO NVARCHAR(30),
-   DEPARTAMENTO NVARCHAR(70),
-   DEPARTAMENTO_SUP NVARCHAR(70)
+-- Tabla CARGOS
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CARGOS')
+BEGIN
+    CREATE TABLE CARGOS (
+        ID INT IDENTITY(1,1) PRIMARY KEY,
+        CODIGO NVARCHAR(30),
+        CARGO NVARCHAR(100),
+        CARGO_SUP NVARCHAR(100)
+    );
+END
+GO
 
-);
+-- Tabla NOMINA
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'NOMINA')
+BEGIN
+    CREATE TABLE NOMINA(
+        ID INT IDENTITY(1,1) PRIMARY KEY,
+        CODIGO_NOM NVARCHAR(40) NOT NULL UNIQUE,
+        DETALLE NVARCHAR(100),
+        FECHA_INI DATE,
+        FECHA_FIN DATE,
+        FECHA_PAGO DATE,
+        TIPO_NOMINA NVARCHAR(20),
+        HORAS_NORMALES_PAGAS DECIMAL(12,2),
+        HORAS_EXTRAS_PAGAS DECIMAL(12,2),
+        AFP DECIMAL(12,2),
+        ARS DECIMAL(12,2),
+        IRS DECIMAL(12,2),
+        DEDUCCIONES_PAGAS DECIMAL(12,2),
+        SUELDO_PAGO DECIMAL(12,2)
+    );
+END
+GO
 
+-- Tabla DETALLE_NOMINA
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'DETALLE_NOMINA')
+BEGIN
+    CREATE TABLE DETALLE_NOMINA(
+        ID INT IDENTITY(1,1) PRIMARY KEY,
+        CODIGO_NOM NVARCHAR(40),
+        CODIGO_EMP NVARCHAR(40),
+        NOMBRE_EMP NVARCHAR(100),
+        DEPARTAMENTO NVARCHAR(100),
+        SALARIO DECIMAL(12,2),
+        HORAS_NORMALES DECIMAL(12,2),
+        HORAS_EXTRAS DECIMAL(12,2),
+        AFP DECIMAL(12,2),
+        ARS DECIMAL(12,2),
+        TOTAL_PAGO DECIMAL(12,2),
+        CONSTRAINT FK_NOMINA_DETALLE FOREIGN KEY (CODIGO_NOM)
+            REFERENCES NOMINA(CODIGO_NOM)
+    );
+END
+GO
