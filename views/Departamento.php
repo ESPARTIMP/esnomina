@@ -27,8 +27,29 @@
     }
     </script>
       
-     
-    </style>
+     <style>
+        /* Estilos para quitar bordes de la card */
+        .card.border-0 {
+            border: none !important;
+        }
+        
+        .card-header {
+            background-color: transparent;
+            border-bottom: none !important;
+            padding: 1.25rem 1.25rem 0.5rem;
+        }
+        
+        /* Eliminar bordes de la tabla */
+        .table-borderless th,
+        .table-borderless td {
+            border: none !important;
+        }
+        
+        .table-light {
+            background-color: #f8f9fa;
+            border: none;
+        }
+     </style>
 </head>
 <body>
   <?php include __DIR__ . '/Nav.php'; ?>
@@ -60,8 +81,8 @@
         ?>
  
   <div class="card mb-4 border-0 shadow-lg">
-              <div class="row d-flex  mb-4 justify-content-end ">
-                <div class="col-3  ">
+              <div class="row d-flex mb-4 justify-content-end ">
+                <div class="col-3">
                      <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalAgregarDepartamento">
                          <i class="bi bi-building-add"></i> Agregar Departamento
                      </button>        
@@ -69,9 +90,9 @@
                 </div>
             </div>
           <div class="card-header fw-semibold">Listado de Departamentos</div>
-          <div class="card-body  p-0">
+          <div class="card-body p-0">
             <div class="table-responsive">
-              <table class="table table-hover table-borderless mb-0 align-middle table-">
+              <table class="table table-hover table-borderless mb-0 align-middle">
                 <thead class="table-light">
                   <tr>
                     <th>Nombre</th>
