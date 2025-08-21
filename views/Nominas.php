@@ -246,35 +246,39 @@ $nominas = [
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3>Gestión de Nóminas</h3>
         </div>
-
+<form action="views/funciones/nomina.php?consulta=agregar_nomina" method = "POST">
         <!-- Filtros y búsqueda -->
         <div class="card shadow-lg">
             <div class="card-body">
                 <div class="row d-flex">
+                <div class="col-md-3">
+                      <label>Codigo</label>
+                       <input type="text" class="form-control" name = "codigo_nom" placeholder="Ingrese la descripción de nómina">
+                    </div>
                     <div class="col-md-3">
                       <label>Descripción de nómina</label>
-                       <input type="text" class="form-control" placeholder="Ingrese la descripción de nómina">
+                       <input type="text" class="form-control" name = "descripcion" placeholder="Ingrese la descripción de nómina">
                     </div>
                     <div class="col-md-3">
                         <label>Periodo</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="date" class="form-control" placeholder="Ingrese el periodo de nómina">
+                            <input type="date" class="form-control" name = "fecha_ini" placeholder="Ingrese el periodo de nómina">
                           </div>
                           <div class="col-md-6">
-                            <input type="date" class="form-control" placeholder="Ingrese el periodo de nómina">
+                            <input type="date" class="form-control" name = "fecha_fin" placeholder="Ingrese el periodo de nómina">
                           </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                       <label>Fecha de pago</label>
-                      <input type="date" class="form-control" placeholder="Ingrese la fecha de pago">
+                      <input type="date" class="form-control" name = "fecha_pago" placeholder="Ingrese la fecha de pago">
                     </div>
 
                     <div class="col-md-3">
                      <label>Tipos de nóminas</label>
-                     <select class="form-select">
+                     <select class="form-select" name = "tipo_nomina">
                          <option value="">Seleccione un tipo</option>
                          <option value="mensual">Mensual</option>
                          <option value="quincenal">Quincenal</option>
@@ -290,7 +294,7 @@ $nominas = [
                     </div>
                </div>
         </div>
-
+        </form>
         <!-- Listado de Nóminas -->
         <div class="card shadow-lg">
             <div class="card-header">

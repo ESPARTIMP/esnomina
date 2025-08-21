@@ -155,7 +155,7 @@
                                             <!-- Fecha Nacimiento -->
                                             <div class="col-md-6 mb-3">
                                                 <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-                                                <input type="date" class="form-control" id="fecha_na" name="fecha_nac" required>
+                                                <input type="date" class="form-control" id="fecha_na" name="fecha_na" required>
                                             </div>
                                             <!-- Nombre Completo -->
                                             <div class="col-md-6 mb-3">
