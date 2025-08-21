@@ -132,7 +132,7 @@
           
             <!-- Contenido principal -->
             <main class="col-12 col-md-10 col-lg-11 pt-4 ">
-            <form method="POST" action="funciones/empleados.php" enctype="multipart/form-data">
+            <form method="POST" action="funciones/empleados.php?consulta=ingresar_empleados" enctype="multipart/form-data">
                     <!-- ======================== Datos Personales ======================== -->
                     <fieldset class="fieldset-custom" id="datos-empleado">
                         <div class="row mb-4">
@@ -152,7 +152,7 @@
                                             <!-- Fecha Nacimiento -->
                                             <div class="col-md-6 mb-3">
                                                 <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-                                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nac" required>
+                                                <input type="date" class="form-control" id="fecha_na" name="fecha_nac" required>
                                             </div>
                                             <!-- Nombre Completo -->
                                             <div class="col-md-6 mb-3">
@@ -164,21 +164,21 @@
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="lugar_nacimiento" class="form-label">Lugar de Nacimiento</label>
-                                                <input type="text" class="form-control" id="lugar_nacimiento" name="lugar_nacimiento" placeholder="Ingrese lugar de nacimiento" required>
+                                                <input type="text" class="form-control" id="lugar_nacimiento" name="lugar_na" placeholder="Ingrese lugar de nacimiento" required>
                                             </div>
 
                                             <!--Apellido-->
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="apellido" class="form-label">Apellido</label>
-                                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
+                                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese apellido" required>
                                             </div>
 
                                             <!--Residencia-->
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="residencia" class="form-label">Residencia</label>
-                                                <input type="text" class="form-control" id="residencia" name="residencia" placeholder="Ingrese residencia" required>
+                                                <input type="text" class="form-control" id="residencia" name="direccion" placeholder="Ingrese residencia" required>
                                             </div>
                                             <!--Sexo-->
                                             <div class="col-md-6 mb-3">
@@ -229,14 +229,14 @@
                                         <!-- Fecha de ingreso -->
                                         <div class="col-md-12 mb-3">
                                             <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
-                                            <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
+                                            <input type="date" class="form-control" id="fecha_ing" name="fecha_ing">
                                         </div>
 
                                   
                                         <!-- Tipo de contrato -->
                                         <div class="col-md-12">
                                             <label for="tipo_contrato" class="form-label">Tipo de contrato</label>
-                                            <select class="form-select" id="tipo_contrato" name="tipo_contrato">
+                                            <select class="form-select" id="tipo_contrato" name="tipo_cont">
                                                 <option value="">Seleccione</option>
                                                 <option value="fijo">Fijo</option>
                                                 <option value="temporal">Temporal</option>
@@ -299,7 +299,7 @@
 
                                              <div class="col-md-6 mb-3">
                                                 <label for="numero_cuenta" class="form-label">Numero de Cuenta</label>
-                                                <input type="text" class="form-control" id="numero_cuenta" name="numero_cuenta" required>
+                                                <input type="text" class="form-control" id="numero_cuen" name="numero_cuen" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
@@ -315,7 +315,7 @@
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="salario" class="form-label">Salario</label>
-                                                <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario" required>
+                                                <input type="number" class="form-control" id="salario" name="sueldo_men" placeholder="Ingrese salario" required>
                                         </div>
 
                                     </div>

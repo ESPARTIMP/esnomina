@@ -29,7 +29,7 @@ if($verificar == 'ingresar_empleados'){
                         $departamento = $_POST['departamento'];
                         $cargo = $_POST['cargo'];
                         $observacion = $_POST['observacion'];
-                        $foto = $_POST['foto'];
+                        $foto = $_POST[''];
                         $id_usuario_crea = $_POST['usuario_crea'];
                         $fecha_crea = date("Y-m-d H:i:s");
 
@@ -166,12 +166,12 @@ if($verificar == 'eliminar_departamento'){
 ///////////////////////////Cargos////////////////////////////////
 if($verificar == 'ingresar_cargos'){
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
         $codigo = $_POST['codigo'];
         $cargo = $_POST['cargo'];
         $cargo_sup = $_POST['cargo_sup'];
 
-                try{
+            //    try{
 
                     $consultar_cargos = "SELECT * FROM cargos WHERE codigo = :codigo";
                     $stmt= $pdo->prepare($consultar_cargos);
@@ -187,7 +187,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
     
-}
+//}
+
+
 if($verificar == 'actualizar_cargos'){
 
     
