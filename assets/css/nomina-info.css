@@ -1,0 +1,58 @@
+/* Estilos específicos para la página NominaInfo */
+
+/* Namespace de página */
+.page-nomina-info {
+  background-color: #f5f7ff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card visual */
+.page-nomina-info .card-custom,
+.page-nomina-info .card.border-0.shadow-lg {
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+  border: none;
+}
+
+/* Badges, títulos y tablas */
+.page-nomina-info .badge-status { color: #1DB954; font-weight: 600; }
+.page-nomina-info .table th { background-color: #f8f9fa; font-weight: 600; text-align: center; }
+.page-nomina-info .table td { text-align: center; }
+
+/* Tabla: columna de selección */
+.page-nomina-info .checkbox-cell { width: 38px; text-align: center; }
+.page-nomina-info .checkbox-cell .form-check-input { margin: 0; cursor: pointer; }
+
+/* Seleccionar todos (encabezado) */
+.page-nomina-info .select-all-top { display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; color: #6c757d; }
+
+/* Resumen inferior */
+.page-nomina-info .resumen-box { display: flex; justify-content: space-between; gap: 10px; margin-top: 25px; }
+.page-nomina-info .resumen-item { flex: 1; background: #f5f7fb; border-radius: 12px; padding: 12px; text-align: center; font-weight: 700; }
+.page-nomina-info .resumen-item span { display: block; font-size: 14px; color: #6c757d; font-weight: 500; }
+.page-nomina-info .resumen-item strong { font-size: 18px; color: #6c63ff; }
+
+/* Botones de acción */
+.page-nomina-info .btn-regresar {
+  margin-left: 0.3%;
+  margin-top: 0.3%;
+  background: #0E0C35;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  transition: all 0.3s ease;
+}
+
+.page-nomina-info .btn-conceptos {
+  margin-left: 0.3%;
+  margin-top: 0.3%;
+  background: #B0f0A5;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  transition: all 0.3s ease;
+}

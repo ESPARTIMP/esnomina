@@ -4,27 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/Esnomina/assets/css/styles.css">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Inicio</title>
-  <style>
-    /* Estilos para mantener un tamaño consistente en los cards */
-    .card-fixed-height {
-      min-height: 180px; /* Altura mínima para los cards de resumen */
-      max-height: 190px; /* Altura máxima para evitar que se estiren demasiado */
-    }
-    
-    .chart-card-fixed-height {
-      min-height: 400px; /* Altura mínima para los cards con gráficas */
-      max-height: 420px; /* Altura máxima para evitar que se estiren demasiado */
-    }
-    
-    .user-payment-card-fixed-height {
-      min-height: 400px; /* Altura mínima para los cards de pagos de usuario */
-      max-height: 400px; /* Altura máxima para evitar que se estiren demasiado */
-    }
-  </style>
+  <link rel="stylesheet" href="/Esnomina/assets/css/styles.css">
+  <link rel="stylesheet" href="/Esnomina/assets/css/index.css">
+
+  <!-- Estilos de componentes -->
+  <link rel="stylesheet" href="/Esnomina/assets/css/card-ultimos-pagos.css">
+  <link rel="stylesheet" href="/Esnomina/assets/css/card-proximo-pago.css">
+  
 </head>
 <body>
   <!-- Barra superior -->
@@ -42,7 +30,7 @@
       <main class="col-12 col-md-10 pt-4">
 
         <!-- Fila 1: Cards resumen -->
-        <section class="row g-4 mb-5">
+        <section class="row g-4">
           <div class="col-12 col-sm-6 col-xl-3">
             <div class="card-fixed-height">
               <?php include 'Componentes/CardNomina.php'; ?>

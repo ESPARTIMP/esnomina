@@ -49,6 +49,21 @@
             background-color: #f8f9fa;
             border: none;
         }
+        
+        /* Estilos para estados como texto coloreado en lugar de botones */
+        .estado-activo {
+            color: #28a745;
+            font-weight: 600;
+            background-color: transparent !important;
+            padding: 0;
+        }
+        
+        .estado-inactivo {
+            color: #6c757d;
+            font-weight: 600;
+            background-color: transparent !important;
+            padding: 0;
+        }
      </style>
 </head>
 <body>
@@ -83,7 +98,7 @@
   <div class="card mb-4 border-0 shadow-lg">
               <div class="row d-flex mb-4 justify-content-end ">
                 <div class="col-3">
-                     <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalAgregarDepartamento">
+                     <button type="button" class="btn btn-primary w-100 mt-4" data-bs-toggle="modal" data-bs-target="#modalAgregarDepartamento">
                          <i class="bi bi-building-add"></i> Agregar Departamento
                      </button>        
                      
@@ -113,7 +128,7 @@
                       <td><?= (int)$dep['empleados'] ?></td>
                       <td><?= htmlspecialchars($dep['descripcion']) ?></td>
                       <td>
-                        <span class="badge <?= $dep['estado']==='Activo' ? 'bg-success' : 'bg-secondary' ?>">
+                        <span class="estado-<?= strtolower($dep['estado']) ?>">
                           <?= htmlspecialchars($dep['estado']) ?>
                         </span>
                       </td>

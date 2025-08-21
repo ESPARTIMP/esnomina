@@ -1,44 +1,118 @@
-<?php
-// CardProximoPagoUsuario.php
-?>
-<div class="card border-0 shadow-lg mb-4" style="min-width: 320px;">
-  <div class="card-body">
-    <h6 class="card-title mb-3" style="font-weight: 600; color: #ff0000ff;">Próximos Pagos</h6>
-    <div class="table-responsive">
-      <table class="table table-borderless align-middle mb-0">
-        <thead>
-          <tr style="color: #A1B4FF; font-weight: 500;">
-        
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Pedro A.</td>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Pedro A.</td>
-            <td>11 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-            <td>12 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-          
-            <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-            <td>12 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-          
-            <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-            <td>12 Ago</td>
-            <td>RD$50k</td>
-          </tr>
+<?php /* Componente: Próximos Pagos (parcial) */ ?>
+    <div class="card card-pagos shadow-lg">
+        <div class="card-header card-header-pagos ">
+            <h5 class="mb-0" style="color: #ff0000ff;">Próximos Pagos</h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-container-ProximoPago ">
+                <table class="table table-pagos  table-borderless">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Pedro+A&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Pedro A.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">11 Ago</td>
+                            <td class="payment-amount">RD$50k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Kiara+B&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Kiara B.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">12 Ago</td>
+                            <td class="payment-amount">RD$50k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Maria+C&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Maria C.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">13 Ago</td>
+                            <td class="payment-amount">RD$75k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Juan+D&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Juan D.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">14 Ago</td>
+                            <td class="payment-amount">RD$45k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Laura+E&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Laura E.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">15 Ago</td>
+                            <td class="payment-amount">RD$60k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Carlos+F&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Carlos F.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">16 Ago</td>
+                            <td class="payment-amount">RD$55k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Sofia+G&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Sofia G.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">17 Ago</td>
+                            <td class="payment-amount">RD$80k</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Diego H.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">18 Ago</td>
+                            <td class="payment-amount">RD$65k</td>
+                        </tr>
 
-            <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-              <td><img src="views\Iconos\Perfil.png" style="width:16px; margin-right:6px;"> Kiara B.</td>
-            <td>12 Ago</td>
-            <td>RD$50k</td>
-          </tr>
-        </tbody>
-      </table>
+
+                          <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Diego H.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">18 Ago</td>
+                            <td class="payment-amount">RD$65k</td>
+                        </tr>
+
+                          <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <span class="user-name">Diego H.</span>
+                                </div>
+                            </td>
+                            <td class="payment-date">18 Ago</td>
+                            <td class="payment-amount">RD$65k</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+<?php /* Fin componente */ ?>

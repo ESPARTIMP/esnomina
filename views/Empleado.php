@@ -40,6 +40,9 @@
   </aside>
       <main class="col-12 col-md-10 pt-4">
         <h1 class="h3 mb-4">Empleado</h1>
+        
+        <!-- Cargar intlTelInput para el modal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
         <?php
         // Datos de ejemplo de empleados (solo: nombre, cédula, código, estado)
@@ -62,9 +65,9 @@
   <div class="card mb-4 border-0 shadow-lg">
           <div class="row d-flex mb-4 justify-content-end">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-end">
-              <a href="/Esnomina/views/CrearEmpleado.php" class="btn btn-primary w-100">
+              <button type="button" class="btn btn-primary w-100 mt-4" data-bs-toggle="modal" data-bs-target="#modalAgregarEmpleado">
                 <i class="bi bi-person-plus"></i> Agregar Empleado
-              </a>
+              </button>
             </div>
           </div>
 
@@ -129,12 +132,8 @@ document.addEventListener('hidden.bs.modal', function () {
 });
 </script>
    
+<!-- Incluir el Modal para Agregar Empleado -->
+<?php include __DIR__ . '/Modal/ModalAgregarEmpleado.php'; ?>
    
 </body>
 </html>
-
-
-
-
-
-

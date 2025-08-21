@@ -44,5 +44,41 @@
  
 }
 
+/* Botón pequeño usado en cards de resumen */
+.boton-prueba{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #A1B4FF;
+  border: none;
+  color: white;
+  padding: 3px 22px;
+  border-bottom-right-radius: 50px; 
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Tamaño consistente + curvatura inferior derecha para cards de resumen */
+.card.summary-card {
+  min-width: 280px;
+  height: 100px;
+  background: #fff; /* Asegurar fondo blanco visible con la curva */
+  border-radius:none;
+
+}
+
+/* Alinear curvatura del contenido interno con el botón */
+.resumen-card {
+  background: #fff;
+}
+
+
+
+
+
+
+
+
+
 
 

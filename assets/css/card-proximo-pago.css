@@ -1,0 +1,24 @@
+/* Estilos del componente: Próximos Pagos */
+
+.table-container-ProximoPago {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Personalización del scroll */
+.table-container-ProximoPago::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container-ProximoPago::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+.table-container-ProximoPago::-webkit-scrollbar-thumb {
+  background: #535151ff;
+  border-radius: 4px;
+}
+
+.table-container-ProximoPago::-webkit-scrollbar-thumb:hover {
+  background: #bdb9b9ff;
+}

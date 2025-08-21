@@ -1,13 +1,5 @@
-<?php
-// CardNomina.php
-?>
-<style>
-
-
-
-</style>
-
-<div class="card text-start mb-4 border-0 shadow-lg" style="min-width: 280px;height:100px;">
+<?php // CardProximosPagos.php - componente parcial ?>
+<div class="card text-start mb-4 border-0 shadow-lg summary-card">
   <div class="card-body">
     <h6 class="card-title">Pagos</h6>
     <h3 class="card-text">60 | 03</h3>
