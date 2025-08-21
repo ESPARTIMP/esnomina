@@ -8,51 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <style>
-    body { background-color: #f5f7ff; font-family: 'Segoe UI', sans-serif; }
-    .card-custom { border-radius: 14px; background: #ffffffff; box-shadow: 0 2px 12px rgba(0,0,0,.05); border: none; }
-    .badge-status { color: #1DB954; font-weight: 600; }
-    .table th { background-color: #f8f9fa; font-weight: 600; text-align: center; }
-    .table td { text-align: center; }
-    /* Columna de checks (alineada como en la imagen) */
-    .checkbox-cell { width: 38px; text-align: center; }
-    .checkbox-cell .form-check-input { margin: 0; cursor: pointer; }
-    /* Cabecera “Seleccionar Todos” arriba a la derecha */
-    .select-all-top { display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; color: #6c757d; }
-    .resumen-box { display: flex; justify-content: space-between; gap: 10px; margin-top: 25px; }
-    .resumen-item { flex: 1; background: #f5f7fb; border-radius: 12px; padding: 12px; text-align: center; font-weight: 700; }
-    .resumen-item span { display: block; font-size: 14px; color: #6c757d; font-weight: 500; }
-    .resumen-item strong { font-size: 18px; color: #6c63ff; }
-   
-   .btn-regresar {
-    margin-left:0.3%;
-    margin-top:0.3%;
-    background: #0E0C35;
-    border: none;
-    color: white;
-    padding: 12px 25px;
-    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
-    transition: all 0.3s ease;
-  }
-
-   .btn-conceptos {
-
-     margin-left:0.3%;
-     margin-top:0.3%;
-     background: #B0f0A5;
-     border: none;
-     color: white;
-     padding: 12px 25px;
-     border-bottom-right-radius: 50px; 
-     box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
-     transition: all 0.3s ease;
-    }
-
-
-
-  </style>
+  <!-- Estilos específicos de NominaInfo extraídos a archivo -->
+  <link rel="stylesheet" href="/Esnomina/assets/css/nomina-info.css">
 </head>
-<body>
+<body class="page-nomina-info">
   <!-- Barra superior -->
   <?php include __DIR__ . '/Nav.php'; ?>
 
@@ -96,15 +55,16 @@
             <!-- Tabla de empleados -->
             <div class="table-responsive">
               <table class="table table-borderless align-middle">
+                <caption class="visually-hidden">Lista de empleados en la nómina</caption>
                 <thead>
                   <tr>
-                    <th class="checkbox-cell"></th>
-                    <th>Empleado</th>
-                    <th>Departamento</th>
-                    <th>Sueldo Base</th>
-                    <th>Ingresos</th>
-                    <th>Descuentos</th>
-                    <th>Neto</th>
+                    <th class="checkbox-cell" scope="col" aria-label="Seleccionar fila"></th>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Sueldo Base</th>
+                    <th scope="col">Ingresos</th>
+                    <th scope="col">Descuentos</th>
+                    <th scope="col">Neto</th>
                   </tr>
                 </thead>
                 <tbody id="tablaEmpleados">
@@ -165,7 +125,7 @@
 
         <!-- Botones -->
         <div class="d-flex justify-content-end gap-1 mt-0">
-          <a href="/Esnomina/index.php?page=nominas"><button class="btn-regresar">Regresar</button></a>
+          <a href="/Esnomina/index.php?page=nominas" class="btn btn-regresar">Regresar</a>
           <button class="btn-conceptos">Conceptos</button>
         </div>
       </main>
@@ -177,34 +137,38 @@
 
   <!-- Lógica de selección -->
   <script>
-    const selectAllTop = document.getElementById('selectAllTop');
-    const rowChecks = Array.from(document.querySelectorAll('.row-check'));
-    const tbody = document.getElementById('tablaEmpleados');
+    // Lógica de selección de filas: aislada y cargada tras el DOM
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectAllTop = document.getElementById('selectAllTop');
+      const rowChecks = Array.from(document.querySelectorAll('.row-check'));
 
-    // Toggle visual de fila seleccionada
-    function toggleRowHighlight(tr, checked) {
-      tr.classList.toggle('table-active', checked);
-    }
+      function toggleRowHighlight(tr, checked) {
+        if (!tr) return;
+        tr.classList.toggle('table-active', checked);
+      }
 
-    // Marcar / desmarcar todos
-    selectAllTop.addEventListener('change', (e) => {
-      const checked = e.target.checked;
+      if (selectAllTop) {
+        selectAllTop.addEventListener('change', (e) => {
+          const checked = e.target.checked;
+          rowChecks.forEach(chk => {
+            chk.checked = checked;
+            toggleRowHighlight(chk.closest('tr'), checked);
+          });
+        });
+      }
+
       rowChecks.forEach(chk => {
-        chk.checked = checked;
-        toggleRowHighlight(chk.closest('tr'), checked);
-      });
-    });
-
-    // Sincronizar "Seleccionar Todos" cuando cambian individuales
-    rowChecks.forEach(chk => {
-      chk.addEventListener('change', (e) => {
-        const tr = e.target.closest('tr');
-        toggleRowHighlight(tr, e.target.checked);
-        const allChecked = rowChecks.every(c => c.checked);
-        const noneChecked = rowChecks.every(c => !c.checked);
-        // Estado indeterminado cuando hay mezcla
-        selectAllTop.indeterminate = !allChecked && !noneChecked;
-        selectAllTop.checked = allChecked;
+        chk.addEventListener('change', (e) => {
+          const tr = e.target.closest('tr');
+          toggleRowHighlight(tr, e.target.checked);
+          const allChecked = rowChecks.every(c => c.checked);
+          const noneChecked = rowChecks.every(c => !c.checked);
+          // Estado indeterminado cuando hay mezcla
+          if (selectAllTop) {
+            selectAllTop.indeterminate = !allChecked && !noneChecked;
+            selectAllTop.checked = allChecked;
+          }
+        });
       });
     });
   </script>

@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagos anteriores</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .table-container-ProximoPago {
-            max-height: 240px;
-            overflow-y: auto;
-        }
-
-       /* Personalización del scroll */
-        .table-container-ProximoPago::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .table-container-ProximoPago::-webkit-scrollbar-track {
-            border-radius: 4px;
-        }
-
-        .table-container-ProximoPago::-webkit-scrollbar-thumb {
-            background: #535151ff;
-            border-radius: 4px;
-        }
-
-        .table-container-ProximoPago::-webkit-scrollbar-thumb:hover {
-            background: #bdb9b9ff;
-        }
-    </style>
-</head>
-<body>
+<?php /* Componente: Próximos Pagos (parcial) */ ?>
     <div class="card card-pagos shadow-lg">
         <div class="card-header card-header-pagos ">
             <h5 class="mb-0" style="color: #ff0000ff;">Próximos Pagos</h5>
@@ -147,7 +115,4 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php /* Fin componente */ ?>

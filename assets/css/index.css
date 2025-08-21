@@ -1,0 +1,17 @@
+/* Estilos de layout del dashboard (index) */
+
+/* Alturas fijas para mantener consistencia visual en cards */
+.card-fixed-height {
+  min-height: 180px; /* Cards de resumen */
+  max-height: 190px;
+}
+
+.chart-card-fixed-height {
+  min-height: 400px; /* Cards con gráficas */
+  max-height: 420px;
+}
+
+.user-payment-card-fixed-height {
+  min-height: 400px; /* Cards de pagos de usuario */
+  max-height: 400px;
+}

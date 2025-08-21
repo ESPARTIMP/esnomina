@@ -1,6 +1,6 @@
 <head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="Esnomina/assets/css/styles.css">
+      
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <nav style="position: fixed; top: 0; left: 0; width: 100vw; height: 60px; z-index: 1000; background: #fff; color: #232946; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; font-family: 'Segoe UI', Arial, sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
