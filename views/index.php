@@ -42,7 +42,7 @@
       <main class="col-12 col-md-10 pt-4">
 
         <!-- Fila 1: Cards resumen -->
-        <section class="row g-4 mb-5">
+        <section class="row g-4">
           <div class="col-12 col-sm-6 col-xl-3">
             <div class="card-fixed-height">
               <?php include 'Componentes/CardNomina.php'; ?>

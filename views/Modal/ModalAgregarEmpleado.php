@@ -1,110 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro de Empleados</title>
+<?php
+// Modal/ModalAgregarEmpleado.php - Modal para crear un nuevo empleado
+?>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- International Telephone Input CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
-
-    <!-- Estilos personalizados -->
-    <style>
-        body {
-            background: #f4f4f4;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            font-size: 1rem;
-        }
-
-
-        .boton-guardar{
-            margin-left:0.3%;
-            margin-top:0.3%;
-            background: #AEF0FF;
-            border: none;
-            color: white;
-            padding: 5px 25px;
-            border-bottom-right-radius: 50px; 
-            box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
-            transition: all 0.3s ease;
-            width: 19%;
-        }
-
-      
-
-        .container {
-            background: #fff;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .fieldset-custom {
-            border-radius: 8px;
-            margin-bottom: 30px;
-            
-        }
-
-
-        .btn-personalizado {
-            background-color: #ff2646;
-            border: none;
-            color: white;
-            font-weight: 600;
-            border-radius: 25px;
-            padding: 10px 25px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            max-width: 300px;
-        }
-
-         .boton-regresar {
-           margin-left: 0.3%;
-           margin-top: 0.3%;
-           background: #0E0C35;
-           border: none;
-           color: white;
-           box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
-           transition: all 0.3s ease;
+<!-- Estilos específicos para el modal -->
+<style>
+    .modal-xl {
+        max-width: 95%;
     }
-
-        .btn-personalizado:hover {
-            background-color: #ca2339;
+    
+    @media (min-width: 992px) {
+        .modal-xl {
+            max-width: 90%;
         }
-
-        .secciones-botones {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+    }
+    
+    @media (min-width: 1200px) {
+        .modal-xl {
+            max-width: 1140px;
         }
+    }
+    
+    /* Estilos específicos para el formulario dentro del modal */
+    #modalAgregarEmpleado .form-control:focus,
+    #modalAgregarEmpleado .form-select:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    /* Estilos personalizados restaurados del formulario original */
+    .btn-personalizado { 
+        background-color: #ff2646; 
+        border: none; 
+        color: white; 
+        font-weight: 600; 
+        border-radius: 25px; 
+        padding: 10px 25px; 
+        transition: background-color 0.3s ease; 
+        width: 100%; 
+        max-width: 300px; 
+    }
+    
+    .boton-regresar { 
+        margin-left: 0.3%; 
+        background: #0E0C35; 
+        border: none; 
+        color: white; 
+        box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3); 
+        transition: all 0.3s ease; 
+    }
+    
+    .boton-guardar {
+        margin-left: 0.3%;
+        background: #AEF0FF;
+        border: none;
+        color: white;
+        padding: 5px 25px;
+        border-bottom-right-radius: 50px; 
+        box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .btn-personalizado:hover { 
+        background-color: #ca2339; 
+    }
+    
 
-        .iti {
-            width: 100%;
-        }
+    /* Estilos para el input de teléfono internacional */
+    .iti { 
+        width: 100%; 
+    }
+    
+    .iti input { 
+        width: 100%; 
+    }
+</style>
 
-        .iti input {
-            width: 100%;
-            background-color: rgba(122, 122, 122, 1);
-        }
-
-
-        @media (max-width: 768px) {
-            .container { max-width: 100%; padding: 10px; }
-            .fieldset-custom { padding: 10px; }
-            .btn-personalizado { max-width: 100%; padding: 10px 10px; }
-        }
-
-    @media (max-width: 576px) {
-            .container { padding: 5px; }
-            .fieldset-custom { padding: 5px; }
-            .btn-personalizado { padding: 8px 5px; }
-        }
 
     </style>
 
@@ -121,21 +91,20 @@
             }
         }
     </script>
-</head>
 
-<body>
-    <!-- Navbar -->
-
-    <div class="container-fluid pt-5" style="background:#f5f7ffff;">
-        <div class="row justify-content-center">   
-            <!-- Menú lateral -->
-          
-            <!-- Contenido principal -->
-            <main class="col-12 col-md-10 col-lg-11 pt-4 ">
-            <form method="POST" action="funciones/empleados.php" enctype="multipart/form-data">
+<!-- Modal para crear nuevo empleado -->
+<div class="modal fade" id="modalAgregarEmpleado" tabindex="-1" aria-labelledby="modalAgregarEmpleadoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgregarEmpleadoLabel">Registrar Nuevo Empleado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formularioEmpleado" method="POST" action="/Esnomina/views/funciones/empleados.php" enctype="multipart/form-data">
                     <!-- ======================== Datos Personales ======================== -->
-                    <fieldset class="fieldset-custom" id="datos-empleado">
-                        <div class="row mb-4">
+                    <fieldset id="datos-empleado">
+                        <div class="row">
                             <!-- Información personal -->
                             <div class="col-12 col-lg-7">
                                 <div class="card border-0 shadow-lg">
@@ -275,12 +244,12 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Observaciones</h5>
                                         <div class="row">
-                                           <textarea name="observacion" id="observacion" class="observacion-control" rows="8" placeholder="Ingrese los datos del empleado aquí..." style="border:none;"></textarea>
+                                           <textarea name="observacion" id="observacion" class="observacion-control" rows="7" placeholder="Ingrese los datos del empleado aquí..." style="border:none;"></textarea>
                                         </div>
                                     </div>
                                 </div>
                               </div>
-                                    <div class="col-12 col-lg-9">
+                                <div class="col-12 col-lg-9 mb-0">
                                   <div class="card border-0 shadow-lg mt-4">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos de Ingresos</h5>
@@ -311,59 +280,72 @@
                                                     <option value="banco3">Scotiabank</option>
                                                 </select>
                                             </div>
+                                        
+                                                    
+                                        
 
 
-                                            <div class="col-md-6 mb-3">
+                                            <div class="col-md-6">
                                                 <label for="salario" class="form-label">Salario</label>
                                                 <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario" required>
-                                        </div>
+                                            </div> 
+                                            
 
                                     </div>
+                                           
 
                                 </div>
+                                   
                             </div>
-                              <div class="row">
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <a href="/Esnomina/index.php?page=empleado" class="boton-regresar mt-1 btn">Regresar</a>
-                                        <button type="submit" class="boton-guardar mt-1">Guardar</button>
-                                    </div>
-                              </div>
                         </div>
-                    </fieldset>
-                </form>
-            </main>
-          
+                        
+                    </fieldset> 
 
+                    <div class= "row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="button" class="boton-regresar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="boton-guardar">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- ======================== Scripts ======================== -->
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- International Telephone Input JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<!-- Script para el campo de teléfono internacional y la vista previa de la foto -->
+<script>
+    // Función para vista previa de la foto
+    function mostrarVistaPrevia(event) {
+        const input = event.target;
+        const preview = document.getElementById('vistaPreviaFoto');
+        if (input.files && input.files[0]) {
+            preview.src = URL.createObjectURL(input.files[0]);
+            preview.style.display = 'block';
+        } else {
+            preview.style.display = 'none';
+        }
+    }
 
-    <script>
-        // Scroll suave al abrir Datos Laborales
-        document.getElementById('mostrarLaborales').addEventListener('click', function () {
-            setTimeout(() => {
-                document.getElementById('datos-laborales').scrollIntoView({ behavior: 'smooth' });
-            }, 300); 
-        });
+    // Inicialización del teléfono internacional cuando se abre el modal
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalEl = document.getElementById('modalAgregarEmpleado');
+        if (modalEl) {
+            modalEl.addEventListener('shown.bs.modal', function() {
+                if (window.intlTelInput) {
+                    const input = document.querySelector("#telefono");
+                    const iti = window.intlTelInput(input, {
+                        initialCountry: "do",
+                        preferredCountries: ["do", "us", "es", "mx", "co"],
+                        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+                    });
 
-        // Inicialización de IntlTelInput
-        const input = document.querySelector("#telefono");
-        const iti = window.intlTelInput(input, {
-            initialCountry: "do",
-            preferredCountries: ["do", "us", "es", "mx", "co"],
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-        });
-
-        // Enviar número completo al backend
-        document.querySelector("form").addEventListener("submit", function() {
-            input.value = iti.getNumber(); 
-        });
-    </script>
-
-</body>
-</html>
+                    // Enviar número completo al backend
+                    document.querySelector("#formularioEmpleado").addEventListener("submit", function() {
+                        input.value = iti.getNumber(); 
+                    });
+                }
+            });
+        }
+    });
+</script>
