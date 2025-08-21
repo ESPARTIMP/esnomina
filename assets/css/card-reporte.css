@@ -9,7 +9,7 @@
 }
 
 .btn-limpiar{
- 
+ margin-right: 2%;   
  width: 50%;   
  height: 50%;
  margin-left:0.3%;
@@ -23,7 +23,7 @@
 }
 
 .btn-aplicar{
-
+ margin-right: 2%;   
  width: 50%;   
  height: 50%;
  margin-left:0.3%;
@@ -37,7 +37,6 @@
 }
 
 .btn-pdf{
-    
  width:10%;   
  height: 50%;
  background: #FFA9DD;
@@ -47,6 +46,16 @@
  transition: all 0.3s ease;
 
 }
+
+.modal-personalizado{
+
+   
+    background-color:#E7EFFD ;
+
+}
+
+
+
 
 
 

@@ -3,11 +3,11 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content rounded-4 border-0 shadow-lg">
       <div class="modal-header">
-        <h5 class="modal-title">Reporte de Liquidaciones</h5>
+        <h5 class="modal-title">Percepciones y Deducciones</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body ">
         <!-- Filtros -->
         <div class="row mb-3">
           <div class="col-md-6">
@@ -17,13 +17,13 @@
           <div class="col-md-4">
             <div class="row">
                 <label>Periodo</label>
-                <input type="date" class="form-control d-inline w-50">
-                <input type="date" class="form-control d-inline w-50">
+                <input type="date" class="form-control d-inline w-50 input-personalizados">
+                <input type="date" class="form-control d-inline w-50 input-personalizados">
             </div>
           
           </div>
           <div class="col-md-2 d-flex align-items-end">
-            <button class="btn-limpiar">Limpiar</button>
+            <button class="btn-limpiar mr-1" >Limpiar</button>
             <button class="btn-aplicar">Aplicar</button>
           </div>
         </div>
