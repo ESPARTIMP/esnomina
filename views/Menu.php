@@ -151,15 +151,10 @@ body {
     </li>
 
     <li class="has-submenu">
-        <a onclick="toggleSubmenu(this)">
-            <img src="/Esnomina/views/Iconos/Barras.png" alt="Reportes">Reportes <i class="bi bi-chevron-down" style = "margin-left: 5px;"></i>
+        <a href="/Esnomina/index.php?page=reportes">
+            <img src="/Esnomina/views/Iconos/Barras.png" alt="Reportes">Reportes</i>
         </a>
-        
-        <ul class="submenu">
-            <li><a href="/Esnomina/index.php?page=persenciones"><img src="/Esnomina/views/Iconos/Persenciones.png" alt="Persenciones">Persenciones</a></li> 
-            <li><a href="/Esnomina/index.php?page=liquidaciones"><img src="/Esnomina/views/Iconos/Liquidacion.png" alt="Liquidaciones">Liquidaciones</a></li>
-            <li><a href="/Esnomina/index.php?page=aportesimpuestos"><img src="/Esnomina/views/Iconos/Aportes.png" alt="Aportes e Impuestos">Aportes e Impuestos</a></li>
-        </ul>
+      
     </li>
 
     <li class="has-submenu">
