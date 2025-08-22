@@ -75,7 +75,7 @@
   <?php include __DIR__ . '/Menu.php'; ?>
       </aside>
       <main class="col-12 col-md-10 pt-4">
-        <h1 class="h3 mb-4">Cargos y Departamentos</h1>
+        <h1 class="h3 mb-4">Departamentos</h1>
 
         <?php
         // Datos de ejemplo (reemplaza por tu consulta a BD)

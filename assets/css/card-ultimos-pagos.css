@@ -11,9 +11,13 @@
 
 .card-header-pagos {
   background-color: #ffffffff;
-  color: black;
   font-weight: 600;
   border: none !important;
+}
+
+.card-header{
+
+  background-color:#ffffffff;
 }
 
 .table-container {
