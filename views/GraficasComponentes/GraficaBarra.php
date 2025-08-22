@@ -18,20 +18,27 @@
             {
                 label: 'Horas Trabajadas',
                 data: [120, 150, 170, 160, 180, 140, 130],
-                backgroundColor: '#A1B4FF',
+                backgroundColor: 'rgba(57, 181, 74, 0.65)',
             },
             {
                 label: 'Horas Extras',
                 data: [20, 30, 25, 35, 40, 30, 28],
-                backgroundColor: '#FFB4A1',
+                backgroundColor: '#A1B4FF',
             }
         ]
     },
     options: {
         responsive: true,
-
         plugins: {
             legend: { position: 'top' },
+        },
+        scales: {
+            x: {
+                grid: { display: false }
+            },
+            y: {
+                grid: { display: false }
+            }
         }
     }
 });

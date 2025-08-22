@@ -16,24 +16,26 @@
 document.addEventListener('DOMContentLoaded', function () {
     try {
                 var chart = new CanvasJS.Chart("chartNomina", {
-            animationEnabled: true,
+            animationEnabled: false,
             backgroundColor: "transparent",
                         axisY: {
                             gridThickness: 0,
                             tickThickness: 0,
                             lineThickness: 0,
-                            labelFontColor: "#9aa0a6"
+                            labelFontColor: "#000000ff"
                         },
                         axisX: {
                             gridThickness: 0,
                             tickThickness: 0,
                             lineThickness: 0,
-                            labelFontColor: "#9aa0a6"
+                            labelFontColor: "#000000ff"
                         },
             data: [{
-                type: "splineArea",
-                color: "rgba(0, 110, 255, 0.47)",
-                markerSize: 5,
+                 type: "splineArea",
+                 color: "rgba(147, 144, 255, 1)",  // azul sólido
+                 fillOpacity: 0.8,                  // difuminado hacia abajo
+                 markerSize: 5,
+               
                 dataPoints: [
                     { x: new Date(2000, 0), y: 3289000 },
                     { x: new Date(2001, 0), y: 3830000 },

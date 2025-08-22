@@ -17,11 +17,11 @@ new Chart(ctxCostos, {
         datasets: [{
             data: [30, 25, 20, 15, 10],
             backgroundColor: [
-                '#A1B4FF',
-                '#FFB4A1',
+                '#E7EFFD',
+                '#fbb13b98',
                 '#A1FFD6',
-                '#FFD6A1',
-                '#D6A1FF'
+                'rgba(57, 181, 74, 0.65)',
+                '#A1B4FF'
             ]
         }]
     },
@@ -30,7 +30,7 @@ new Chart(ctxCostos, {
                 maintainAspectRatio: false,
         plugins: {
             legend: { position: 'bottom' },
-        }
+        }  
     }
 });
 </script>

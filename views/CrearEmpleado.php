@@ -113,11 +113,14 @@
         function mostrarVistaPrevia(event) {
             const input = event.target;
             const preview = document.getElementById('vistaPreviaFoto');
+            const btnQuitar = document.getElementById('btnQuitarFoto');
             if (input.files && input.files[0]) {
                 preview.src = URL.createObjectURL(input.files[0]);
                 preview.style.display = 'block';
+                if (btnQuitar) btnQuitar.style.display = 'inline-block';
             } else {
                 preview.style.display = 'none';
+                if (btnQuitar) btnQuitar.style.display = 'none';
             }
         }
     </script>
@@ -245,25 +248,29 @@
                                         </div>
 
                                         <!-- Departamento -->
-                                        <div class="col-md-12 mb-3">
+                                        <div class="col-md-6 mb-3">
                                             <label for="departamento" class="form-label">Departamento</label>
                                             <select class="form-select" id="departamento" name="departamento">
 
                                             <!--Ejemplo de dato -->
                                                 <option value="">Seleccione</option>
                                                 <option value="recursos_humanos">Recursos Humanos</option>
-                                                <option value="finanzas">Finanzas</option>
+                                                <option value="finanzas">Prueba</option>
                                                 <option value="tecnologia">Tecnología</option>
                                             </select>
                                         </div>
+
 
                                         <!-- Foto -->
                                         <div class="col-md-12 mb-3">
                                             <label for="foto" class="form-label">Foto del empleado</label>
                                             <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="mostrarVistaPrevia(event)">
                                             <small class="form-text text-muted">Seleccione una foto desde los archivos de su dispositivo.</small>
-                                            <div class="mt-2">
+                                            <div class="mt-2 d-flex align-items-start">
                                                 <img id="vistaPreviaFoto" src="#" alt="Vista previa de la foto 4x4" style="display:none; width: 120px; height: 120px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
+                                                <button type="button" id="btnQuitarFoto" class="btn btn-sm btn-outline-danger ms-2" style="display:none; white-space: nowrap;">
+                                                    <i class="bi bi-x-lg"></i> Quitar
+                                                </button>
                                             </div>
                                         </div>
 
@@ -363,6 +370,21 @@
         document.querySelector("form").addEventListener("submit", function() {
             input.value = iti.getNumber(); 
         });
+
+        // Quitar foto seleccionada
+        (function(){
+            const btnQuitar = document.getElementById('btnQuitarFoto');
+            const inputFile = document.getElementById('foto');
+            const preview = document.getElementById('vistaPreviaFoto');
+            if (btnQuitar && inputFile && preview) {
+                btnQuitar.addEventListener('click', function(){
+                    inputFile.value = '';
+                    preview.src = '#';
+                    preview.style.display = 'none';
+                    btnQuitar.style.display = 'none';
+                });
+            }
+        })();
     </script>
 
 </body>

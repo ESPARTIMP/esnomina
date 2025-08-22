@@ -73,10 +73,26 @@
     .iti input { 
         width: 100%; 
     }
+    /* Botón para quitar imagen del marco de perfil */
+    .profile-remove-btn {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(220, 53, 69, 0.9);
+        color: #fff;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .profile-remove-btn:hover { background: #dc3545; }
+/* Importante: estilos del marco de foto están en /assets/css/perfil-foto.css */
 </style>
-
-
-    </style>
 
     <!-- Función para vista previa de la foto -->
     <script>
@@ -101,6 +117,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <!-- CSS del marco de foto -->
+                <link rel="stylesheet" href="/Esnomina/assets/css/perfil-foto.css">
                 <form id="formularioEmpleado" method="POST" action="/Esnomina/views/funciones/empleados.php" enctype="multipart/form-data">
                     <!-- ======================== Datos Personales ======================== -->
                     <fieldset id="datos-empleado">
@@ -109,8 +127,29 @@
                             <div class="col-12 col-lg-7">
                                 <div class="card border-0 shadow-lg">
                                     <div class="card-body">
-                                        <h5 class="card-title">Datos Personales</h5>
-                                        <div class="row">
+                                     <h5 class="card-title">Datos Personales</h5>
+                                        <!-- Marco de Foto de Perfil -->
+                                            <div class="mb-3 d-flex flex-column align-items-start">
+                                                    <div class="profile-frame" id="profileFrame" style="position: relative;">
+                                                       <div class="profile-placeholder">
+                                                            <i class="bi bi-person"></i>
+                                                        </div>
+                                                        <img id="profileImage" class="profile-img" alt="Foto de perfil" style="display:none;">
+                                                        <div class="profile-upload-icon" onclick="document.getElementById('fileInputPerfil').click()">
+                                                              <i class="bi bi-camera"></i>
+                                                        </div>
+                                                        <button type="button" id="removeProfileImage" class="profile-remove-btn" title="Quitar foto" aria-label="Quitar foto">
+                                                            <i class="bi bi-x"></i>
+                                                        </button>
+                                                   </div>
+                                                 <input type="file" id="fileInputPerfil" name="foto" class="file-input" accept="image/*" style="display:none;">
+                                               </div>
+                                            <div class="row">
+
+                                            <div class="col-10">
+
+                                            </div>
+                                            
 
                                             <!--Cédula-->
                                             <div class="col-md-6 mb-3">
@@ -168,7 +207,7 @@
                                             </div>
                                               
                                             <!--Email-->
-                                            <div class="col-12 mb-3">
+                                            <div class="col-12 mb-5">
                                                 <label for="email" class="form-label">Email</label>
                                                 <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email" required>
                                             </div>
@@ -182,14 +221,14 @@
                                 </div>
                             </div>
 
-                            <!-- Información empresarial -->
+                            <!-- Información empresarial + Ingresos -->
                             <div class="col-12 col-lg-5">
+                                <!-- Datos Empresariales -->
                                 <div class="card border-0 shadow-lg">
                                     <div class="card-body">
                                         <h5 class="card-title">Datos Empresariales</h5>
 
-                                        <!--Fecha de ingreso -->
-
+                                        <!-- Codigo -->
                                         <div class="col-md-12 mb-3">
                                             <label>Codigo</label>
                                             <input type="number" class="form-control" id="codigo" name="codigo" placeholder="Ingrese código del empleado" required maxlength="50">
@@ -201,9 +240,8 @@
                                             <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
                                         </div>
 
-                                  
                                         <!-- Tipo de contrato -->
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label for="tipo_contrato" class="form-label">Tipo de contrato</label>
                                             <select class="form-select" id="tipo_contrato" name="tipo_contrato">
                                                 <option value="">Seleccione</option>
@@ -217,29 +255,55 @@
                                         <div class="col-md-12 mb-3">
                                             <label for="departamento" class="form-label">Departamento</label>
                                             <select class="form-select" id="departamento" name="departamento">
-
-                                            <!--Ejemplo de dato -->
                                                 <option value="">Seleccione</option>
                                                 <option value="recursos_humanos">Recursos Humanos</option>
                                                 <option value="finanzas">Finanzas</option>
                                                 <option value="tecnologia">Tecnología</option>
                                             </select>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <!-- Foto -->
-                                        <div class="col-md-12 mb-3">
-                                            <label for="foto" class="form-label">Foto del empleado</label>
-                                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*" onchange="mostrarVistaPrevia(event)">
-                                            <small class="form-text text-muted">Seleccione una foto desde los archivos de su dispositivo.</small>
-                                            <div class="mt-2">
-                                                <img id="vistaPreviaFoto" src="#" alt="Vista previa de la foto 4x4" style="display:none; width: 120px; height: 120px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
+                                <!-- ===== Datos de Ingresos (debajo de Empresariales) ===== -->
+                                <div class="card border-0 shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Datos de Ingresos</h5>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="nomina" class="form-label">Nómina</label>
+                                                <select class="form-select" id="nomina" name="nomina" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="mensual">Mensual</option>
+                                                    <option value="quincenal">Quincenal</option>
+                                                    <option value="otro">Otro</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label for="numero_cuenta" class="form-label">Número de Cuenta</label>
+                                                <input type="text" class="form-control" id="numero_cuenta" name="numero_cuenta" required>
+                                            </div>
+
+                                            <div class="col-md-12 mb-3">
+                                                <label for="banco" class="form-label">Banco</label>
+                                                <select class="form-select" id="banco" name="banco" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="banco1">Popular</option>
+                                                    <option value="banco2">Banreservas</option>
+                                                    <option value="banco3">Scotiabank</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-12 mb-3">
+                                                <label for="salario" class="form-label">Salario</label>
+                                                <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario" required>
                                             </div>
                                         </div>
-
                                     </div>
-                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12 col-lg-3  mt-4">
+                            <div class="col-12 col-lg-12 mt-4">
                                 <div class="card border-0 shadow-lg ">
                                     <div class="card-body">
                                         <h5 class="card-title">Observaciones</h5>
@@ -249,54 +313,7 @@
                                     </div>
                                 </div>
                               </div>
-                                <div class="col-12 col-lg-9 mb-0">
-                                  <div class="card border-0 shadow-lg mt-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Datos de Ingresos</h5>
-
-                                        <div class="row">
-                                        <!--Sexo-->
-                                            <div class="col-md-6 mb-3">
-                                                <label for="nomina" class="form-label">Nomina</label>
-                                                <select class="form-select" id="nomina" name="nomina" required>
-                                                    <option value="">Seleccione</option>
-                                                    <option value="mensual">Mensual</option>
-                                                    <option value="quincenal">Quincenal</option>
-                                                    <option value="otro">Otro</option>
-                                                </select>
-                                            </div>
-
-                                             <div class="col-md-6 mb-3">
-                                                <label for="numero_cuenta" class="form-label">Numero de Cuenta</label>
-                                                <input type="text" class="form-control" id="numero_cuenta" name="numero_cuenta" required>
-                                            </div>
-
-                                            <div class="col-md-6 mb-3">
-                                                <label for="banco" class="form-label">Banco</label>
-                                                <select class="form-select" id="banco" name="banco" required>
-                                                    <option value="">Seleccione</option>
-                                                    <option value="banco1">Popular</option>
-                                                    <option value="banco2">Banreservas</option>
-                                                    <option value="banco3">Scotiabank</option>
-                                                </select>
-                                            </div>
-                                        
-                                                    
-                                        
-
-
-                                            <div class="col-md-6">
-                                                <label for="salario" class="form-label">Salario</label>
-                                                <input type="number" class="form-control" id="salario" name="salario" placeholder="Ingrese salario" required>
-                                            </div> 
-                                            
-
-                                    </div>
-                                           
-
-                                </div>
-                                   
-                            </div>
+                            
                         </div>
                         
                     </fieldset> 
@@ -348,4 +365,61 @@
             });
         }
     });
+
+        // Lógica del marco de foto de perfil (selección + arrastrar/soltar)
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileFrame = document.getElementById('profileFrame');
+            const fileInput = document.getElementById('fileInputPerfil');
+            const profileImage = document.getElementById('profileImage');
+            const placeholder = document.querySelector('#profileFrame .profile-placeholder');
+            const removeBtn = document.getElementById('removeProfileImage');
+
+            if (!profileFrame || !fileInput) return;
+
+            function setPreview(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileImage.src = e.target.result;
+                    profileImage.style.display = 'block';
+                    if (placeholder) placeholder.style.display = 'none';
+                    if (removeBtn) removeBtn.style.display = 'flex';
+                };
+                reader.readAsDataURL(file);
+            }
+
+            function clearPreview() {
+                if (!fileInput || !profileImage) return;
+                fileInput.value = '';
+                profileImage.removeAttribute('src');
+                profileImage.style.display = 'none';
+                if (placeholder) placeholder.style.display = '';
+                if (removeBtn) removeBtn.style.display = 'none';
+            }
+
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    setPreview(e.target.files[0]);
+                }
+            });
+
+            profileFrame.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                profileFrame.style.border = '4px dashed #0d6efd';
+            });
+            profileFrame.addEventListener('dragleave', function() {
+                profileFrame.style.border = '4px solid #fff';
+            });
+            profileFrame.addEventListener('drop', function(e) {
+                e.preventDefault();
+                profileFrame.style.border = '4px solid #fff';
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    fileInput.files = e.dataTransfer.files;
+                    setPreview(e.dataTransfer.files[0]);
+                }
+            });
+
+            if (removeBtn) {
+                removeBtn.addEventListener('click', clearPreview);
+            }
+        });
 </script>

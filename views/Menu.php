@@ -1,8 +1,6 @@
 <style>
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-
 }
 
 .sidebar {
@@ -12,7 +10,7 @@ body {
     border-right: 1px solid #dee2e6;
     width: 250px;
     padding: 10px 0;
-    margin-top: 0; /* Align with container margin */
+    margin-top: 10%; /* Align with container margin */
 }
 
 .sidebar ul {
@@ -38,7 +36,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background: #f0f0f0;
+    background: #6464648c;
     border-left: 4px solid #000;
 }
 
@@ -53,9 +51,11 @@ body {
     display: block;
 }
 
-/* Líneas tipo árbol minimalistas */
+.element-principal{   
+ margin-top: 10%;
+}
 
-/* Línea vertical que conecta los hijos */
+/* Líneas tipo árbol minimalistas */
 .submenu li::before {
     content: '';
     position: absolute;
@@ -82,12 +82,11 @@ body {
     background: #ccc;
 }
 
-
 /* Iconos */
 .sidebar ul li a img {
     margin-right: 8px;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     margin-left: 10px;
 }
 
@@ -111,61 +110,48 @@ body {
     }
 }
 </style>
-</head>
-<body>
+
+<!-- Sidebar de navegación principal -->
 <nav class="sidebar shadow-lg">
-<ul>
-    <li>
-        <a href="/Esnomina/index.php?page=inicio">
-            <img src="/Esnomina/views/Iconos/Darshoboard.png" alt="Dashboard">Dashboard
-        </a>
-    </li>
-<nav class="sidebar">
-<ul>
-    <li>
-        <a href="/Esnomina/index.php?page=inicio">
-            <img src="/Esnomina/views/Iconos/Darshoboard.png" alt="Dashboard">Dashboard
-        </a>
-    </li>
+    <ul>
+        <li class="element-principal">
+            <a href="/Esnomina/index.php?page=inicio">
+                <img src="/Esnomina/views/Iconos/Darshoboard.png" alt="Dashboard">Dashboard
+            </a>
+        </li>
 
-    <li class="has-submenu">
-        <a onclick="toggleSubmenu(this)">
-            <img src="/Esnomina/views/Iconos/Empleado.png" alt="Empleados">Empleados <i class="bi bi-chevron-down" style = "margin-left: 5px;"></i>
-        </a>
-        <ul class="submenu">
-            <li><a href="/Esnomina/index.php?page=empleado"><img src="/Esnomina/views/Iconos/AgregarEmpleados.png" alt="Agregar Empleado">Agregar Empleado</a></li>
-            <li><a href="/Esnomina/index.php?page=cargos"><img src="/Esnomina/views/Iconos/Cargos.png" alt="Cargos">Cargos</a></li>
-            <li><a href="/Esnomina/index.php?page=departamentos"><img src="/Esnomina/views/Iconos/Departamentos.png" alt="Departamentos">Departamentos</a></li>
-        </ul>
-    </li>
+        <li class="has-submenu element-principal">
+            <a onclick="toggleSubmenu(this)">
+                <img src="/Esnomina/views/Iconos/Empleado.png" alt="Empleados">Empleados <i class="bi bi-chevron-down" style="margin-left: 5px;"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="/Esnomina/index.php?page=empleado"><img src="/Esnomina/views/Iconos/AgregarEmpleados.png" alt="Agregar Empleado">Agregar Empleado</a></li>
+                <li><a href="/Esnomina/index.php?page=cargos"><img src="/Esnomina/views/Iconos/Cargos.png" alt="Cargos">Cargos</a></li>
+                <li><a href="/Esnomina/index.php?page=departamentos"><img src="/Esnomina/views/Iconos/Departamentos.png" alt="Departamentos">Departamentos</a></li>
+            </ul>
+        </li>
 
-    <li>
-        <a href="/Esnomina/index.php?page=nominas">
-            <img src="/Esnomina/views/Iconos/Nominas.png" alt="Nominas">Nominas
-        </a>
-    </li>
-    <li>
-        <a href="/Esnomina/index.php?page=nominas">
-            <img src="/Esnomina/views/Iconos/Nominas.png" alt="Nominas">Nominas
-        </a>
-    </li>
+        <li class="element-principal">
+            <a href="/Esnomina/index.php?page=nominas">
+                <img src="/Esnomina/views/Iconos/Nominas.png" alt="Nominas">Nominas
+            </a>
+        </li>
 
-    <li class="has-submenu">
-        <a href="/Esnomina/index.php?page=reportes">
-            <img src="/Esnomina/views/Iconos/Barras.png" alt="Reportes">Reportes</i>
-        </a>
-      
-    </li>
+        <li class="element-principal">
+            <a href="/Esnomina/index.php?page=reportes">
+                <img src="/Esnomina/views/Iconos/Barras.png" alt="Reportes">Reportes
+            </a>
+        </li>
 
-    <li class="has-submenu">
-        <a onclick="toggleSubmenu(this)">
-            <img src="/Esnomina/views/Iconos/TuercaDinero.png" alt="Configuracion">Configuracion <i class="bi bi-chevron-down" style = "margin-left: 5px;"></i>
-        </a>
-        <ul class="submenu">
-            <li><a href="/Esnomina/index.php?page=bancosPagos"><img src="/Esnomina/views/Iconos/Banco.png" alt="Bancos y Pagos">Bancos y Pagos</a></li>
-        </ul>
-    </li>
-</ul>
+        <li class="has-submenu element-principal">
+            <a onclick="toggleSubmenu(this)">
+                <img src="/Esnomina/views/Iconos/TuercaDinero.png" alt="Configuracion">Configuracion <i class="bi bi-chevron-down" style="margin-left: 5px;"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="/Esnomina/index.php?page=bancosPagos"><img src="/Esnomina/views/Iconos/Banco.png" alt="Bancos y Pagos">Bancos y Pagos</a></li>
+            </ul>
+        </li>
+    </ul>
 </nav>
 
 <script>
@@ -180,7 +166,7 @@ function getSubmenuGroups() {
     return Array.from(document.querySelectorAll('.has-submenu'));
 }
 
-// Toggle that does NOT close others; persists current open set
+// Toggle submenu and persist state
 function toggleSubmenu(el){
     const li = el.closest('.has-submenu');
     if (!li) return;
