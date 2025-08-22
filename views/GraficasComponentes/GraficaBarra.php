@@ -8,9 +8,10 @@
          </div>
   
        </div>
-   <script>
-   const ctx = document.getElementById('graficaBarra').getContext('2d');
-   new Chart(ctx, {
+    <script>
+    window.addEventListener('load', function(){
+    const ctx = document.getElementById('graficaBarra').getContext('2d');
+    new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto'],
@@ -41,5 +42,6 @@
             }
         }
     }
+});
 });
 </script>

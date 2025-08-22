@@ -10,6 +10,7 @@
   </div>
 </div>
 <script>
+window.addEventListener('load', function(){
 const ctxCostos = document.getElementById('graficaCostos').getContext('2d');
 new Chart(ctxCostos, {
     type: 'pie',
@@ -32,5 +33,6 @@ new Chart(ctxCostos, {
             legend: { position: 'bottom' },
         }  
     }
+});
 });
 </script>

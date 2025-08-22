@@ -8,12 +8,8 @@
     </div>
   
 </div>
-<!-- Mantener Chart.js disponible para otras gráficas que lo usan -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- CanvasJS -->
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
     try {
                 var chart = new CanvasJS.Chart("chartNomina", {
             animationEnabled: false,

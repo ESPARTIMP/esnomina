@@ -91,3 +91,6 @@
   </div>
 </body>
 </html>
+<!-- Cargar librerías de gráficos una sola vez y de forma diferida -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js" defer></script>

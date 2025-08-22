@@ -1,0 +1,132 @@
+/* Estilos originales ... */
+
+/* Modificar los estados para que sean solo texto coloreado */
+.estado-revision {
+  color: #f0b70e; /* Color amarillo para En Revisión */
+  background-color: transparent;
+}
+.estado-confirmada {
+  color: #155724; /* Color verde para Confirmada */
+  background-color: transparent;
+}
+.estado-pendiente {
+  color: #0c5460; /* Color azul para Pendiente */
+  background-color: transparent;
+}
+.badge-estado {
+  padding: 0;
+  font-weight: 600;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Eliminar completamente todas las líneas de las tablas */
+.table { border: none !important; }
+.table th, .table td {
+  border: none !important;
+  border-bottom: none !important;
+}
+.table thead th {
+  background-color: #f5f7ff;
+  border-bottom: none !important;
+}
+/* Asegurar que la tabla tenga espaciado adecuado sin las líneas */
+.table td, .table th { padding: 1rem 0.75rem; }
+/* Mantener el efecto hover para mejorar la usabilidad */
+.table-hover tbody tr:hover { background-color: rgba(13, 110, 253, 0.05); }
+
+.boton-personalizado {
+  background-color: #1d004dff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+.boton-personalizado:hover { background-color: #0056b3; }
+
+/* Adjust for fixed navbar */
+body { padding-top: 0; /* Remove default padding */ }
+
+/* Style for the sidebar to handle the fixed nav */
+.sidebar-fill { position: relative; z-index: 10; }
+
+.input-modificacion { background-color: #000000ff; }
+
+/* Style all form inputs with the requested background color */
+.form-control, .form-select {
+  background-color: #f5f7ff !important;
+  border: 1px solid #dee2e6;
+}
+.form-control:focus, .form-select:focus {
+  background-color: #f5f7ff !important;
+  border-color: #1d004dff;
+  box-shadow: 0 0 0 0.25rem rgba(29, 0, 77, 0.25);
+}
+
+.boton-crear-nomina{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #FFA9DD;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+  transition: all 0.3s ease;
+}
+.boton-finalizar{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #B0f0A5;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-bottom-right-radius: 50px; 
+  transition: all 0.3s ease;
+}
+.boton-calcular{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #FFA9DD;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+}
+.boton-guardar-borrador{
+  margin-left:0.3%;
+  margin-top:0.3%;
+  background: #0E0C35;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+}
+.boton-finalizar,
+.boton-calcular,
+.boton-guardar-borrador,
+.boton-crear-nomina {
+  /* Reducir padding vertical */
+  padding: 3px 22px;
+  /* Fuente más pequeña y delgada */
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* Transición más suave */
+  transition: all 0.2s ease;
+  /* Sombra más sutil */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Texto con mejor contraste */
+  letter-spacing: 0.3px;
+}
+
+/* Eliminar bordes de los cards */
+.card { border: none !important; }
+.card-header {
+  background-color: transparent;
+  border-bottom: none !important;
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+.card-body { padding: 1.25rem; }
+/* Mantener la sombra para dar profundidad sin bordes */
+.shadow-lg { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important; }

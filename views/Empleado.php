@@ -26,8 +26,9 @@
         }
     }
     </script>
-      
-     
+    <style>
+      .estado-activo { color: #28a745; font-weight: 600; }
+      .estado-inactivo { color: #6c757d; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -94,9 +95,7 @@
                       <td><?= htmlspecialchars($emp['nombre']) ?></td>
                       <td><?= htmlspecialchars($emp['codigo']) ?></td>
                       <td>
-                        <span class="badge <?= $emp['estado']==='Activo' ? 'bg-success' : 'bg-secondary' ?>">
-                          <?= htmlspecialchars($emp['estado']) ?>
-                        </span>
+                        <span class="estado-<?= strtolower($emp['estado']) ?>"><?= htmlspecialchars($emp['estado']) ?></span>
                       </td>
                       <td class="text-center">
                         <?= renderEliminarBtn($emp['codigo']) ?>
