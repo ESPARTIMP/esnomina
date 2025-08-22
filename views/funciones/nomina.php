@@ -14,7 +14,7 @@ if ($verificar == 'agregar_nomina') {
 
     // Configuración
     $horas_por_dia       = 7.8;
-    $horas_semanales     = 40;
+    $horas_semanales     = 39;
     $dias_trabajados_mes = 23.83;
     $dias_quincenales = $dias_trabajados_mes / 2;
     $horas_quincenas = $dias_quincenales * $horas_por_dia;
@@ -22,7 +22,7 @@ if ($verificar == 'agregar_nomina') {
 
 
     // Simulación de horas (estas deberían venir de bio o marcaciones)
-    $horas_normales           = 39;
+    $horas_normales           = 25;
     $horas_extras             = 2;
     $horas_fin_semana         = 4;
     $horas_extras_fin_semana  = 0;
@@ -128,8 +128,9 @@ if ($verificar == 'agregar_nomina') {
                         }else{
                             $horas_tardanza_descontar = 0;
                         }
-
+                        $sueldo_de_debengar = $sueldo_hora * $horas_semanales;
                         $sueldot = $sueldo_hora * $horas_normales;
+
                         $sueldo_bruto = $sueldot + $horas_extras_pagar + $horas_fin_semana_pagar + $horas_extra_fin_semana_pagar + $horas_nocturnas_pagar + $horas_extras_nocturnas_pagar + $horas_feriadas_pagar + $horas_extras_feriadas_pagar;
                         
                         $total_afp = $sueldot * $afp;
@@ -139,7 +140,7 @@ if ($verificar == 'agregar_nomina') {
                         $total_deducciones = $total_afp + $total_ars  ;
                         $sueldo_neto = $sueldo_bruto - $total_deducciones;
 
-                       
+                       $horas_faltantes_a_pagar = $horas_semanales - $horas_normales;
 
                     } elseif ($tipo_nomina == "quincenal") {
 
@@ -388,6 +389,9 @@ if ($verificar == 'agregar_nomina') {
                     $total_nomina        += $sueldo_neto;
                     $horas_normales_pagas += $horas_normales;
                     $horas_extras_pagas  += $horas_extras_pagar;
+                    $total_afp_pago += $total_afp;
+                    $total_ars_pago += $total_ars;
+                    $total_isr_pago += $isr_pagar;
 
                     $insert_detalle = "INSERT INTO detalle_nomina 
                     (codigo_nom, codigo_emp, nombre_emp, departamento, salario,
@@ -395,14 +399,14 @@ if ($verificar == 'agregar_nomina') {
                      horas_fin_semana, horas_extras_fin_semana, horas_feriadas, horas_extras_feriadas,
                      total_horas_normales, total_horas_extras, total_horas_nocturnas, total_horas_extras_nocturnas,
                      total_horas_fin_semana, total_horas_extras_fin_semana, total_horas_feriadas, total_horas_extras_feriadas,
-                     afp, ars,isr, total_pago,sueldo_bruto) 
+                     afp, ars,isr, total_pago,sueldo_bruto,horas_descuento) 
                 VALUES 
                     (:codigo_nom, :codigo_emp, :nombre_emp, :departamento, :salario,
                      :horas_normales, :horas_extras, :horas_nocturnas, :horas_extras_nocturnas,
                      :horas_fin_semana, :horas_extras_fin_semana, :horas_feriadas, :horas_extras_feriadas,
                      :total_horas_normales, :total_horas_extras, :total_horas_nocturnas, :total_horas_extras_nocturnas,
                      :total_horas_fin_semana, :total_horas_extras_fin_semana, :total_horas_feriadas, :total_horas_extras_feriadas,
-                     :afp, :ars,:isr, :total_pago,:sueldo_bruto)";
+                     :afp, :ars,:isr, :total_pago,:sueldo_bruto,:horas_descuento)";
                 
                 $stmt_det = $pdo->prepare($insert_detalle);
                 
@@ -432,7 +436,8 @@ if ($verificar == 'agregar_nomina') {
                     ":ars" => $total_ars,
                     ":isr" => $isr_pagar,
                     ":total_pago" => $sueldo_neto,
-                    ":sueldo_bruto"=> $sueldo_bruto
+                    ":sueldo_bruto"=> $sueldo_bruto,
+                    ":horas_descuento"=> $horas_faltantes_a_pagar
                 ]);
                 
                 }
@@ -454,9 +459,9 @@ if ($verificar == 'agregar_nomina') {
                     ":tipo_nomina"          => $tipo_nomina,
                     ":horas_normales_pagas" => $horas_normales_pagas,
                     ":horas_extras_pagas"   => $horas_extras_pagas,
-                    ":afp"                  => $total_afp ,
-                    ":ars"                  =>  $total_ars,
-                    ":irs"                  => $irs,
+                    ":afp"                  => $total_afp_pago ,
+                    ":ars"                  =>  $total_ars_pago,
+                    ":irs"                  => $total_isr_pago,
                     ":deducciones_pagas"    => $irs,
                     ":sueldo_pago"          => $total_nomina
                 ]);
