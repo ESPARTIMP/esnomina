@@ -1,5 +1,5 @@
 <?php /* Componente: Últimos Pagos (parcial) */ ?>
-    <div class="card card-pagos shadow-lg">
+    <div class="card shadow-lg">
         <div class="card-header card-header-pagos">
             <h5 class="mb-0">Ultimos Pagos</h5>
         </div>
@@ -8,7 +8,7 @@
                 <table class="table table-pagos table-borderless">
                     <thead>
                         <tr>
-                            <th>Cliente</th>
+                            <th>Usuario</th>
                             <th>Fecha</th>
                             <th>Monto</th>
                         </tr>

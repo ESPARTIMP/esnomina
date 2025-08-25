@@ -1,5 +1,5 @@
 <?php /* Componente: Próximos Pagos (parcial) */ ?>
-    <div class="card card-pagos shadow-lg">
+    <div class="card shadow-lg">
         <div class="card-header card-header-pagos ">
             <h5 class="mb-0" style="color: #ff0000ff;">Próximos Pagos</h5>
         </div>

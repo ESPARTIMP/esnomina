@@ -127,6 +127,7 @@ body { padding-top: 0; /* Remove default padding */ }
   border-bottom: none !important;
   padding: 1.25rem 1.25rem 0.5rem;
 }
-.card-body { padding: 1.25rem; }
+.card-body { padding: 1.25rem;  border-radius: 0;
+}
 /* Mantener la sombra para dar profundidad sin bordes */
 .shadow-lg { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important; }

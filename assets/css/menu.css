@@ -1,7 +1,25 @@
-body {
-	font-family: Arial, sans-serif;
+
+@font-face {
+  font-family: 'Objective';
+  src: url('../fonts/objective/Objective-Regular.woff2') format('woff2'),
+       url('../fonts/objective/Objective-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Objective';
+  src: url('../fonts/objective/Objective-Bold.woff2') format('woff2'),
+       url('../fonts/objective/Objective-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* Usar la fuente con fallback */
+body {
+  font-family: 'Objective', 'Segoe UI', Arial, sans-serif;
+}
 .sidebar {
 	background-color: #fff;
 	min-height: calc(100vh - 60px);
