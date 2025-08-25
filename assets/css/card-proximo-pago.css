@@ -3,7 +3,9 @@
 .table-container-ProximoPago {
   max-height: 240px;
   overflow-y: auto;
+  font-size: 25px;
 }
+
 
 /* Personalización del scroll */
 .table-container-ProximoPago::-webkit-scrollbar {

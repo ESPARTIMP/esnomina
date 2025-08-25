@@ -8,16 +8,16 @@
                 <table class="table table-pagos table-borderless">
                     <thead>
                         <tr>
-                            <th>Usuario</th>
+                            <th>Empleado</th>
                             <th>Fecha</th>
-                            <th>Monto</th>
+                            <th>Pago</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Pedro+A&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Pedro A.</span>
                                 </div>
                             </td>
@@ -27,7 +27,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Kiara+B&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Kiara B.</span>
                                 </div>
                             </td>
@@ -37,7 +37,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Maria+C&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Maria C.</span>
                                 </div>
                             </td>
@@ -47,7 +47,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Juan+D&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Juan D.</span>
                                 </div>
                             </td>
@@ -57,7 +57,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Laura+E&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Laura E.</span>
                                 </div>
                             </td>
@@ -67,7 +67,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Carlos+F&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Carlos F.</span>
                                 </div>
                             </td>
@@ -77,7 +77,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Sofia+G&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Sofia G.</span>
                                 </div>
                             </td>
@@ -87,7 +87,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Diego H.</span>
                                 </div>
                             </td>
@@ -97,7 +97,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Diego H.</span>
                                 </div>
                             </td>
@@ -107,7 +107,7 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Diego+H&background=808080&color=fff" class="user-avatar">
+                                    <img src="/Esnomina/views/Iconos/Perfil.png" class="user-avatar">
                                     <span class="user-name">Diego H.</span>
                                 </div>
                             </td>

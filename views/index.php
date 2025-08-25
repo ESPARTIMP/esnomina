@@ -55,7 +55,7 @@
         </section>
 
         <!-- Fila 2: Gráfica Nómina + Últimos pagos -->
-        <section class="row g-4 mb-4">
+        <section class="row g-4">
           <div class="col-12 col-lg-6">
             <div class="chart-card-fixed-height">
               <?php include 'GraficasComponentes/GraficaNomina.php'; ?>

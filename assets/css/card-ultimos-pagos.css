@@ -15,6 +15,7 @@
 .table-container {
   max-height: 382px;
   overflow-y: auto;
+  font-size: 25px;
 }
 
 /* Personalización del scroll */
@@ -25,14 +26,14 @@
 
 .table-pagos { margin-bottom: 0; }
 .table-pagos thead { position: sticky; top: 0; z-index: 10; }
-.table-pagos th { border-top: none; font-weight: 600; color: #495057; padding: 12px 15px; }
+.table-pagos th { border-top: none; color: #495057; padding: 12px 15px; }
 .table-pagos td { padding: 12px 15px; vertical-align: middle; }
 .table-pagos tbody tr:hover { background-color: rgba(255, 77, 77, 0.05); }
 
 .user-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; margin-right: 8px; border: 2px solid #e9ecef; }
-.user-name { font-weight: 500; color: #343a40; }
-.payment-date { color: #6c757d; font-weight: 500; }
-.payment-amount { font-weight: 600; color: #28a745; }
+.user-name { color: #343a40; }
+.payment-date { color: #6c757d; }
+.payment-amount { color: #28a745; }
 
 @media (max-width: 576px) {
   .table-pagos { font-size: 0.9rem; }
