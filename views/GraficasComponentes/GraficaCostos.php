@@ -1,7 +1,7 @@
 <?php
 // GraficaCostos.php - Gráfica de pastel (distribución de costos)
 ?>
-<div class="card mb-4 border-0 shadow-lg">
+<div class="card mb-4 border-0 shadow-lg rounded-0">
     <div class="card-body">
     <h6 class="card-title" style="font-weight: 600; color: #232946;">Distribución De Costos</h6>
         <div class="d-flex justify-content-center">
@@ -10,6 +10,7 @@
   </div>
 </div>
 <script>
+window.addEventListener('load', function(){
 const ctxCostos = document.getElementById('graficaCostos').getContext('2d');
 new Chart(ctxCostos, {
     type: 'pie',
@@ -32,5 +33,6 @@ new Chart(ctxCostos, {
             legend: { position: 'bottom' },
         }  
     }
+});
 });
 </script>

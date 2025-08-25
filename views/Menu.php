@@ -1,115 +1,5 @@
-<style>
-body {
-    font-family: Arial, sans-serif;
-}
-
-.sidebar {
-    background-color: #fff;
-    min-height: calc(100vh - 60px); /* Account for nav height */
-    height: 100%;
-    border-right: 1px solid #dee2e6;
-    width: 250px;
-    padding: 10px 0;
-    margin-top: 10%; /* Align with container margin */
-}
-
-.sidebar ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    position: relative;
-}
-
-/* Contenedor de link + icono */
-.sidebar ul li a {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    color: #000;
-    text-decoration: none;
-    border-left: 4px solid transparent;
-    transition: all 0.2s;
-    position: relative;
-}
-
-.sidebar ul li a:hover {
-    background: #6464648c;
-    border-left: 4px solid #000;
-}
-
-/* Submenu */
-.has-submenu > .submenu {
-    display: none;
-    padding-left: 20px;
-    position: relative;
-}
-
-.has-submenu.open > .submenu {
-    display: block;
-}
-
-.element-principal{   
- margin-top: 10%;
-}
-
-/* Líneas tipo árbol minimalistas */
-.submenu li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 12px; /* centro del icono hijo */
-    width: 1px;
-    height: 100%;
-    background: #ccc;
-}
-
-/* No dibujar línea vertical en el último hijo */
-.submenu li:last-child::before {
-    height: 50%; /* corta la línea para que termine en el último item */
-}
-
-/* Línea horizontal desde vertical hasta inicio del texto */
-.submenu li::after {
-    content: '';
-    position: absolute;
-    top: 50%; /* centro vertical del link */
-    left: 12px; /* desde la vertical */
-    width: 12px; /* hasta donde inicia el texto */
-    height: 1px;
-    background: #ccc;
-}
-
-/* Iconos */
-.sidebar ul li a img {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-}
-
-/* Móvil */
-@media (max-width: 900px) {
-    .sidebar {
-        width: 100%;
-        position: relative;
-    }
-    .sidebar ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .submenu {
-        position: absolute;
-        background: #fff;
-        border: 1px solid #dee2e6;
-        padding: 10px;
-        display: none;
-    }
-}
-</style>
+<!-- estilos del menú -->
+<link rel="stylesheet" href="/Esnomina/assets/css/menu.css">
 
 <!-- Sidebar de navegación principal -->
 <nav class="sidebar shadow-lg">
@@ -125,9 +15,9 @@ body {
                 <img src="/Esnomina/views/Iconos/Empleado.png" alt="Empleados">Empleados <i class="bi bi-chevron-down" style="margin-left: 5px;"></i>
             </a>
             <ul class="submenu">
-                <li><a href="/Esnomina/index.php?page=empleado"><img src="/Esnomina/views/Iconos/AgregarEmpleados.png" alt="Agregar Empleado">Agregar Empleado</a></li>
-                <li><a href="/Esnomina/index.php?page=cargos"><img src="/Esnomina/views/Iconos/Cargos.png" alt="Cargos">Cargos</a></li>
-                <li><a href="/Esnomina/index.php?page=departamentos"><img src="/Esnomina/views/Iconos/Departamentos.png" alt="Departamentos">Departamentos</a></li>
+                <li><a href="/Esnomina/empleado"><img src="/Esnomina/views/Iconos/AgregarEmpleados.png" alt="Agregar Empleado">Agregar Empleado</a></li>
+                <li><a href="/Esnomina/cargos"><img src="/Esnomina/views/Iconos/Cargos.png" alt="Cargos">Cargos</a></li>
+                <li><a href="/Esnomina/departamentos"><img src="/Esnomina/views/Iconos/Departamentos.png" alt="Departamentos">Departamentos</a></li>
             </ul>
         </li>
 

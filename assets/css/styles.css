@@ -1,3 +1,5 @@
+
+
 .boton{
   background-color: #A1B4FF;
   width: 20%;
@@ -51,11 +53,12 @@
   background: #A1B4FF;
   border: none;
   color: white;
-  padding: 3px 22px;
+  padding: 7px 15px;
   border-bottom-right-radius: 50px; 
   box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
   font-size: 0.9rem;
   font-weight: 500;
+
 }
 
 /* Tamaño consistente + curvatura inferior derecha para cards de resumen */
@@ -63,14 +66,28 @@
   min-width: 280px;
   height: 100px;
   background: #fff; /* Asegurar fondo blanco visible con la curva */
-  border-radius:none;
+  border-radius: 0;
 
 }
 
 /* Alinear curvatura del contenido interno con el botón */
 .resumen-card {
   background: #fff;
+
 }
+
+
+
+
+
+
+
+
+
+/* Forzar que las cards sin borde (border-0) realmente no muestren borde, sobre Bootstrap */
+.card.border-0 { border: 0 !important; }
+.card.border-0 > .card-header,
+.card.border-0 > .card-footer { border: 0 !important; }
 
 
 

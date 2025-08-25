@@ -8,6 +8,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Esnomina/assets/css/styles.css">
   <link rel="stylesheet" href="/Esnomina/assets/css/index.css">
+  <link rel="stylesheet" href="/Esnomina/assets/css/nominas.css">
 
   <!-- Estilos de componentes -->
   <link rel="stylesheet" href="/Esnomina/assets/css/card-ultimos-pagos.css">
@@ -54,13 +55,13 @@
         </section>
 
         <!-- Fila 2: Gráfica Nómina + Últimos pagos -->
-        <section class="row g-4 mb-4">
-          <div class="col-12 col-lg-8">
+        <section class="row g-4">
+          <div class="col-12 col-lg-6">
             <div class="chart-card-fixed-height">
               <?php include 'GraficasComponentes/GraficaNomina.php'; ?>
             </div>
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-6">
             <div class="user-payment-card-fixed-height">
               <?php include 'Componentes/CardUltimoPagoUsuario.php'; ?>
             </div>
@@ -69,17 +70,17 @@
 
         <!-- Fila 3: Costos + Barras + Próximo pago -->
         <section class="row g-4 mb-4">
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-3 col-lg-3">
             <div class="chart-card-fixed-height">
               <?php include 'GraficasComponentes/GraficaCostos.php'; ?>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-3 col-lg-3">
             <div class="chart-card-fixed-height">
               <?php include 'GraficasComponentes/GraficaBarra.php'; ?>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-6">
             <div class="user-payment-card-fixed-height">
               <?php include 'Componentes/CardProximoPagoUsuario.php'; ?>
             </div>
@@ -91,3 +92,6 @@
   </div>
 </body>
 </html>
+<!-- Cargar librerías de gráficos una sola vez y de forma diferida -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js" defer></script>

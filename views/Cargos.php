@@ -137,7 +137,7 @@
                 <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel"></i> Filtrar</button>
               </div>
               <div class="col-md-3 text-md-end">
-                <button type="button" class="btn btn-success w-100" disabled>
+                <button type="button" id="btnAgregarCargo" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#modalAgregarCargo">
                   <i class="bi bi-briefcase"></i> Agregar Cargo
                 </button>
               </div>
@@ -187,7 +187,7 @@
       </main>
     </div>
   </div>
- <?php include __DIR__ . '/Modal/ModalAgregar.php'; ?>
+ <?php include __DIR__ . '/Modal/ModalAgregarCargo.php'; ?>
 
 <script>
 // Carga Bootstrap bundle solo una vez (si no lo trae Nav.php)
@@ -212,6 +212,17 @@ document.addEventListener('DOMContentLoaded', function(){
   if (sel && form) {
     sel.addEventListener('change', function(){ form.submit(); });
   }
+  // Prefill del departamento en el modal de Agregar Cargo
+  document.addEventListener('shown.bs.modal', function (ev) {
+    var modal = ev.target;
+    if (modal && modal.id === 'modalAgregarCargo') {
+      var depSel = document.getElementById('filtroDepartamento');
+      var inputDep = modal.querySelector('#departamento');
+      if (depSel && inputDep) {
+        inputDep.value = depSel.value || '';
+      }
+    }
+  });
 });
 </script>
    

@@ -1,16 +1,16 @@
 <?php
 // Card con gráfica de barras usando Chart.js
 ?>
-<div class="card mb-4 border-0 shadow-lg">
+<div class="card mb-4 border-0 shadow-lg rounded-0">
     <div class="card-body">
         <h6 class="card-title" style="font-weight: 600; color: #232946;">Horas Trabajadas vs Horas Extras</h6>
-        <canvas id="graficaBarra" class="chart-canvas" style="width: 220px; height: 125px;"></canvas>
+        <canvas id="graficaBarra" class="chart-canvas" style="width: 220px; height: 175px;"></canvas>
          </div>
-  
        </div>
-   <script>
-   const ctx = document.getElementById('graficaBarra').getContext('2d');
-   new Chart(ctx, {
+    <script>
+    window.addEventListener('load', function(){
+    const ctx = document.getElementById('graficaBarra').getContext('2d');
+    new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto'],
@@ -25,6 +25,7 @@
                 data: [20, 30, 25, 35, 40, 30, 28],
                 backgroundColor: '#A1B4FF',
             }
+
         ]
     },
     options: {
@@ -41,5 +42,6 @@
             }
         }
     }
+});
 });
 </script>

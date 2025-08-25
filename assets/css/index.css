@@ -2,16 +2,42 @@
 
 /* Alturas fijas para mantener consistencia visual en cards */
 .card-fixed-height {
-  min-height: 180px; /* Cards de resumen */
+  min-height: 200px; /* Cards de resumen */
   max-height: 190px;
+  border-radius: 0;
 }
 
 .chart-card-fixed-height {
   min-height: 400px; /* Cards con gráficas */
   max-height: 420px;
+  border-radius: 0;
 }
 
 .user-payment-card-fixed-height {
   min-height: 400px; /* Cards de pagos de usuario */
-  max-height: 400px;
+  max-height: 400px; 
+  border-radius: 0;
+}
+
+/* Ruta desde assets/css/formulario.css hacia assets/fonts/... */
+@font-face {
+  font-family: 'Objective';
+  src: url('../fonts/objective/Objective-Regular.woff2') format('woff2'),
+       url('../fonts/objective/Objective-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Objective';
+  src: url('../fonts/objective/Objective-Bold.woff2') format('woff2'),
+       url('../fonts/objective/Objective-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Usar la fuente con fallback */
+body {
+  font-family: 'Objective', 'Segoe UI', Arial, sans-serif;
 }

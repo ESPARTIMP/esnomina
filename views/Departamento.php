@@ -79,11 +79,12 @@
 
         <?php
         // Datos de ejemplo (reemplaza por tu consulta a BD)
+        // Ahora solo: código, departamento, departamento superior
         $departamentos = [
-          ['nombre'=>'Recursos Humanos','codigo'=>'RH-001','responsable'=>'Ana Pérez','empleados'=>12,'descripcion'=>'Gestión del talento humano','estado'=>'Activo'],
-          ['nombre'=>'Contabilidad','codigo'=>'CT-002','responsable'=>'Luis Gómez','empleados'=>8,'descripcion'=>'Manejo de finanzas y contabilidad','estado'=>'Activo'],
-          ['nombre'=>'IT','codigo'=>'IT-003','responsable'=>'María Ruiz','empleados'=>15,'descripcion'=>'Soporte y desarrollo de sistemas','estado'=>'Activo'],
-          ['nombre'=>'Compras','codigo'=>'CP-004','responsable'=>'Jorge Díaz','empleados'=>5,'descripcion'=>'Adquisición de bienes y servicios','estado'=>'Inactivo'],
+          ['codigo'=>'RH-001','departamento'=>'Recursos Humanos','departamento_sup'=>'Dirección General'],
+          ['codigo'=>'CT-002','departamento'=>'Contabilidad','departamento_sup'=>'Dirección General'],
+          ['codigo'=>'IT-003','departamento'=>'Tecnología','departamento_sup'=>'Operaciones'],
+          ['codigo'=>'CP-004','departamento'=>'Compras','departamento_sup'=>'Operaciones'],
         ];
 
         if (!function_exists('renderEliminarBtn')) {
@@ -110,28 +111,18 @@
               <table class="table table-hover table-borderless mb-0 align-middle">
                 <thead class="table-light">
                   <tr>
-                    <th>Nombre</th>
                     <th>Código</th>
-                    <th>Responsable</th>
-                    <th>Empleados</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
+                    <th>Departamento</th>
+                    <th>Departamento Superior</th>
                     <th class="text-center" style="width: 120px;">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($departamentos as $dep): ?>
                     <tr>
-                      <td><?= htmlspecialchars($dep['nombre']) ?></td>
                       <td><?= htmlspecialchars($dep['codigo']) ?></td>
-                      <td><?= htmlspecialchars($dep['responsable']) ?></td>
-                      <td><?= (int)$dep['empleados'] ?></td>
-                      <td><?= htmlspecialchars($dep['descripcion']) ?></td>
-                      <td>
-                        <span class="estado-<?= strtolower($dep['estado']) ?>">
-                          <?= htmlspecialchars($dep['estado']) ?>
-                        </span>
-                      </td>
+                      <td><?= htmlspecialchars($dep['departamento']) ?></td>
+                      <td><?= htmlspecialchars($dep['departamento_sup']) ?></td>
                       <td class="text-center">
                         <?= renderEliminarBtn($dep['codigo']) ?>
                       </td>
