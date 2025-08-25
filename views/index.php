@@ -8,6 +8,7 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="/Esnomina/assets/css/styles.css">
   <link rel="stylesheet" href="/Esnomina/assets/css/index.css">
+  <link rel="stylesheet" href="/Esnomina/assets/css/nominas.css">
 
   <!-- Estilos de componentes -->
   <link rel="stylesheet" href="/Esnomina/assets/css/card-ultimos-pagos.css">

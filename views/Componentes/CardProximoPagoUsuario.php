@@ -1,11 +1,11 @@
 <?php /* Componente: Próximos Pagos (parcial) */ ?>
-    <div class="card shadow-lg">
+    <div class="card shadow-lg border-0 rounded-0">
         <div class="card-header card-header-pagos ">
             <h5 class="mb-0" style="color: #ff0000ff;">Próximos Pagos</h5>
         </div>
         <div class="card-body p-0">
             <div class="table-container-ProximoPago ">
-                <table class="table table-pagos  table-borderless">
+                <table class="table table-pagos table-borderless">
                     <tbody>
                         <tr>
                             <td>

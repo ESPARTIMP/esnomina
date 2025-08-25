@@ -1,5 +1,5 @@
 <?php /* Componente: Últimos Pagos (parcial) */ ?>
-    <div class="card shadow-lg">
+    <div class="card shadow-lg border-0 rounded-0">
         <div class="card-header card-header-pagos">
             <h5 class="mb-0">Ultimos Pagos</h5>
         </div>
